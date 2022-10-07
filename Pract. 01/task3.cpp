@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
     int amount;
     cout << "Enter amount in lv:";
     cin >> amount;
