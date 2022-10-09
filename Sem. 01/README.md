@@ -23,7 +23,7 @@
 
 Деклaрация на променлива:
 ```c++
-<тип> <име> = (<стойност>)
+<тип> <име> = <стойност>;
 ```
 
 **Примитивни типове:**
@@ -32,11 +32,11 @@
 - Булев тип (**bool**).
 - Символен тип (**char**).
    
-Същестуват и други примитвни типове, които ще се разгледат по-напред в курса.
+Същестуват и други примитивни типове, които ще се разгледат по-напред в курса.
 
 ```c++
 int N = 50;          //N is an integer variable with value 50
-double PI = 3.14159  //PI is a double variable with value 3.14159
+double PI = 3.14159; //PI is a double variable with value 3.14159
 bool bOk = 0;        //bOk is a boolean variable with value 0, i.e. false
 char symbol = 'N';   //symbol is a char variable with value 'N'
 ```
