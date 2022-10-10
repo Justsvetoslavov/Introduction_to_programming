@@ -15,8 +15,8 @@ int main()
 	cin >> c;
 
 	double d = sqrt(b * b - 4 * a * c);
-	double x1 = (-b + d) / 2;
-	double x2 = (-b - d) / 2;
+	double x1 = (-b + d) / (2 * a);
+	double x2 = (-b - d) / (2 * a);
 
 	cout << "x1 = " << x1 << ", x2 = " << x2;
 
