@@ -1,0 +1,9 @@
+{"Title" : "Upgrade To Lightworks Create","Description" : "<p><strong>Upgrade to Lightworks Create - All the tools you need to create amazing videos at a price you can afford!</strong></p>\\
+<p></p>\\
+<p>- Future proof with stunning 4K video export</p>\\
+<p>- Easy social media posting for TikTok, Twitter, and More</p>\\
+<p>- Get dynamic with NewBlue motion graphics suite</p>\\
+<p>- High resolution proxy editing</p>\\
+<p>- And much more</p>\\
+<p></p>\\
+<p><a href=\"https://lwks.com/get-create-video-editing-software-from-lightworks/?utm_source=In-App&amp;utm_medium=Message&amp;utm_campaign=Upgrade%20to%20Create&amp;utm_content=Landing%20Page\">Upgrade Now</a></p>","Image" : "C:\\Users\\Public\\Documents\\Lightworks\\Messages\\a0af5aa6-0758-4b30-8dc6-caf5501f47fc\\Lift-Off-2.png","UID" : "a0af5aa6-0758-4b30-8dc6-caf5501f47fc","Expiry" : "","Presentation" : "daily","Build" : "Lightworks2021.1 (126716) - Jan 19 2021"}
