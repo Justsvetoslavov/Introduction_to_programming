@@ -8,7 +8,7 @@ Git basics (using the cmd) https://git-scm.com/book/en/v2/Git-Basics-Getting-a-G
 
 ![image](https://user-images.githubusercontent.com/49128895/195177324-70e262e9-efd8-494d-8234-e1a0d815eb31.png)
 
-## Задачи
+## Задачи:
 
 1. Напишете програма,която проверява дали въведена от потребителя година е високосна. <br />
  **Проверете сами кои години се считат за високосни.**
