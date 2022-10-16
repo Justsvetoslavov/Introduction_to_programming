@@ -27,6 +27,8 @@ int main() {
 				std::cout << "Entered letter is not a vowel.\n";
 				break;
 		}
+	} else {
+		std::cout << "The symbol is not part of the latin alphabet." << std::endl;
 	}
 
 	return 0;
