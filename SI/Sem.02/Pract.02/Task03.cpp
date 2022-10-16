@@ -8,7 +8,7 @@ int main() {
 	std::cout << "Enter second number value: ";
 	std::cin >> number2;
 
-	number1 > number2 ? std::cout << "First number is larger than second number.\n" : std::cout << "Second number is larger than first number.\n";
+	std::cout << (number1 > number2 ? "The first number is larger than the second number." : "The second number is larger than the first number.") << std::endl;
 
 	return 0;
 }
