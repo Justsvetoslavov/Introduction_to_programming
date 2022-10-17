@@ -12,14 +12,12 @@ int main() {
 			case 'I':
 			case 'O':
 			case 'U':
-			case 'W':
 			case 'Y':
 			case 'a':
 			case 'e':
 			case 'i':
 			case 'o':
 			case 'u':
-			case 'w':
 			case 'y':
 				std::cout << "Entered letter is a vowel.\n";
 				break;
