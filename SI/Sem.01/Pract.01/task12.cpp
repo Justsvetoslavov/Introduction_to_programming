@@ -1,23 +1,19 @@
 #include <iostream>
-
 using namespace std;
-
-int main()
-{
-	int inputSeconds;
-
-	cout << "Seconds: ";
-	cin >> inputSeconds;
-
-	int days = inputSeconds / (60 * 60 * 24);
-	int hours = (inputSeconds / (60 * 60)) % 24;
-	int minutes = (inputSeconds / 60) % 60;
-	int seconds = inputSeconds % 60;
-
-	cout << days << " days, " 
-		 << hours << " hours, " 
-		 << minutes << " minutes and " 
-		 << seconds << " seconds";
-
-	return 0;
+int main() {
+    int sec, secCopy;
+cout << "Please enter the amount of seconds:" << endl;
+cin>>sec;
+if(sec < 0) cout<<"Not a vaild input! "<<endl;
+else{
+secCopy = sec;
+int seconds = sec % 60;
+sec /= 60;
+int minutes = sec % 60;
+sec /= 60;
+int hours = sec % 24;
+sec /= 24;
+int days = sec;
+cout<<secCopy<<" seconds are "<<sec<<" days, "<<hours<<" hours, "<<minutes<<" minutes, and "<<seconds<<" seconds.";
+}
 }
