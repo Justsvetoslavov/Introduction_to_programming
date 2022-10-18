@@ -37,7 +37,7 @@
 
 4. Add a solution for a task
     - Create a cpp file for each task.
-    - The name of the file should be TaskXX.cpp where XX is the number of the task. e.g. Task01.cpp, Task12.cpp etc. 
+    - **The name of the file should be TaskXX.cpp where XX is the number of the task.** e.g. Task01.cpp, Task12.cpp etc. 
     - Copy your solution into the file
 
 5. Commit solution to a task
