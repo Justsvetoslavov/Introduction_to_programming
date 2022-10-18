@@ -1,14 +1,16 @@
-// ConsoleApplicationPrakt2Task3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 using namespace std;
 int main()
 {
 	int number1, number2;
-	cout << "Enter two numbers"<<endl;
-	cin >> number1>> number2;
-	cout << ((number1 != number2 && number1 > number2) ? "The first one is larger" : "The second one is smaller");
+	cout << "Enter two different numbers" << endl;
+	cin >> number1 >> number2;
+	if (number1 == number2)
+	{
+		cout << "Both numbers are equal!";
+	}
+	else { cout << ((number1 > number2) ? "The first one is larger than the second one" : "The first one is smaller than the second one"); }
 
+	return 0;
 }
 

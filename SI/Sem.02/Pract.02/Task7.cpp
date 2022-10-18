@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 using namespace std;
 
@@ -8,20 +6,20 @@ int main()
     char symbol;
     cout << "Enter a symbol: ";
     cin >> symbol;
-    if (symbol >= 65 && symbol <= 90)
+    if (symbol >= 'A' && symbol <= 'Z')
     {
         symbol += 32;
         cout << symbol;
     }
-    else if (symbol >= 97 && symbol <= 122)
+    else if (symbol >= 'a' && symbol <= 'z')
     {
         symbol -= 32;
         cout << symbol;
     }
-    else 
+    else
     {
         cout << "Invalid character";
     }
-    
+
     return 0;
 }

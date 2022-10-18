@@ -1,23 +1,43 @@
-// Prakt2Task10.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 using namespace std;
 int main()
 {
-    cout << "Enter two real numbers: ";
-    double number1, number2, sum;
-    cin >> number1 >> number2;
-    cout << "The sum of the two numbers is: " << number1 + number2 << endl;
-    cout << "The difference of the two numbers is: " << number1 - number2<<endl;
-    cout << "The multiplication of the two numbers is: " << number1 * number2 << endl;
+    cout << "Enter the first real number: ";
+    double number1, number2;
+    char operation;
+    cin >> number1;
+    cout << "Enter the operation, that needs to be executed.: ";
+    cin >> operation;
+    cout << "Enter the second real number: ";
+    cin >> number2;
 
-    if (number2 != 0)
+    if (operation == '+')
     {
-        cout << "The quotient of the two numbers is: " << number1 / number2<<endl;
-      
+        cout << "The sum of the two numbers is: " << number1 + number2 << endl;
     }
-    else { cout << "Division by 0 is not possible!"; }
+    else if (operation == '-')
+    {
+        cout << "The difference of the two numbers is: " << number1 - number2 << endl;
+    }
+    else if (operation == '*')
+    {
+        cout << "The multiplication of the two numbers is: " << number1 * number2 << endl;
+    }
+    else  if (number2 != 0 && operation == '/')
+    {
+        cout << "The quotient of the two numbers is: " << number1 / number2 << endl;
+
+    }
+    else if (number2 == 0 && operation == '/')
+    {
+        cout << "Division by 0 is not possible!";
+    }
+    else
+    {
+        cout << "Invalid symbols!";
+    }
     return 0;
 }
+
+
 
