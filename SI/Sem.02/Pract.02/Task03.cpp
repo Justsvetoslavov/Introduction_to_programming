@@ -1,19 +1,20 @@
+// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
 #include <iostream>
-
-int main() {
-	double number1 = 0, number2 = 0;
-
-	std::cout << "Enter first number value: ";
-	std::cin >> number1;
-	std::cout << "Enter second number value: ";
-	std::cin >> number2;
-
-	if (number1 == number2) {
-		std::cout << "Both numbers are equal." << std::endl;
-		return 0;
-	}
-
-	std::cout << (number1 > number2 ? "The first number is larger than the second number." : "The second number is larger than the first number.") << std::endl;
-
+using namespace std;
+int main()
+{
+	//Напишете програма, която приема две различни числа и казва кое е по голямо.
+   //Използвайте тернарен оператор.
+	int a, b;
+	cout << "Enter the first number:";
+	cin  >>a;
+	cout << "Enter the second number:";
+	cin >> b;
+	int result=(a > b ? a : b);
+	cout << "The bigger number is:" << result;
 	return 0;
+
 }
+

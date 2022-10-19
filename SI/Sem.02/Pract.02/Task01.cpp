@@ -1,16 +1,22 @@
+// task01.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
 #include <iostream>
+using namespace std;
 
-int main() {
-	int year = 0;
-
-	std::cout << "Enter a year: ";
-	std::cin >> year;
-
-	if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
-		std::cout << "Entered year is leap.\n";
-	} else {
-		std::cout << "Entered year is not leap.\n";
+int main()
+{
+	int year;
+	cout << "Enter a year:";
+	cin >> year;
+	if(year %4 ==0 || year %400 ==0)
+	{
+		cout << "This year is leap year.";
 	}
-
+	else if(year%100 !=0)
+	{
+		cout << "This year is not a leap year.";
+	}
 	return 0;
 }
+
