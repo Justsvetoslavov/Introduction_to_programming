@@ -37,16 +37,13 @@ int main() {
 			case 9:
 				std::cout << "IX";
 				break;
-			case 10:
-				std::cout << "X";
-				break;
 			default:
 				break;
 		}
 
 		std::cout << std::endl;
 	} else {
-		std::cout << "Entered number contains more than one digit or 0." << std::endl;
+		std::cout << "Entered number contains more than one digit or is 0." << std::endl;
 	}
 
 	return 0;
