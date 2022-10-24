@@ -10,7 +10,7 @@ int main() {
 
 	if (n >= 2 && n <= 9) {
 		for (int i = 1; i <= numberOfRows; i++) {
-			const int numberOfEmptySpaces = sqrt((n - i) * (n - i)), numberOfSymbols = (n - sqrt((n - i) * (n - i))) * 2 - 1;
+			const int numberOfEmptySpaces = abs(n - i), numberOfSymbols = numberOfRows - 2 * numberOfEmptySpaces;
 
 			for (int j = 0; j < numberOfEmptySpaces; j++) {
 				std::cout << ' ';
