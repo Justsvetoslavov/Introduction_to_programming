@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-	double number1 = 0, number2 = 0;
+	double number1, number2;
 
 	std::cout << "Enter first number value: ";
 	std::cin >> number1;
