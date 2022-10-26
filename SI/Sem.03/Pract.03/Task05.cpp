@@ -1,22 +1,29 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
 	int target = 0;
 
-	std::cout << "Enter a number between 0 and 100: ";
-	std::cin >> target;
+	cout << "Enter a number between 0 and 100: ";
+	cin >> target;
 
-	if (target >= 0 && target <= 100) {
-		int counter = 0, currentGuess = -1;
-		while (currentGuess != target) {
-			std::cin >> currentGuess;
-			std::cout << (currentGuess > target ? "Higher" : "Lower") << std::endl;
-			counter++;
+	if (target < 0 || target > 100) {
+		cout << "Entered number invalid." << endl;
+		return 0;
+	}
+
+	int counter = 0, currentGuess;
+	while (true) {
+		cin >> currentGuess;
+		counter++;
+
+		if (currentGuess == target) {
+			break;
 		}
 
-		std::cout << "Congratulations, you guessed right! In only took you " << counter << " tries to do so. :)" << std::endl;
-	} else {
-		std::cout << "Entered number invalid." << std::endl;
+		cout << (currentGuess > target ? "Higher" : "Lower") << endl;
 	}
-	return 0;
+
+	cout << "Congratulations, you guessed right! In only took you " << counter << " tries to do so. :)" << endl;
 }
