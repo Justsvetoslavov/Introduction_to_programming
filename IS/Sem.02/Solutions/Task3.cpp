@@ -8,4 +8,6 @@ int main()
     std::cout << ((a <= b && b >= c && c <= d && d >= e) 
 			|| (a >= b && b <= c && c >= d && d <= e))
 			? "Yes" : "No";
+
+	return 0;
 }

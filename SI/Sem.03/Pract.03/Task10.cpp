@@ -1,43 +1,39 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
-	int input = 0, numberOfDigits = 0;
+	int input;
+	cin >> input;
 
-	std::cin >> input;
+	int numberOfDigits = 0;
+	int inputCopy = input;
 
-	{
-		int inputCopy = input;
-
-		while (inputCopy != 0) {
-			inputCopy /= 10;
-			numberOfDigits++;
-		}
+	while (inputCopy != 0) {
+		inputCopy /= 10;
+		numberOfDigits++;
 	}
 
-	{
-		int firstHalf = 1, secondHalf = 1, numberOfDigitsPerHalf = 0, newNumber = 0;
-
-		numberOfDigitsPerHalf = numberOfDigits / 2;
-		if (numberOfDigits % 2 == 0) numberOfDigitsPerHalf--;
-
-		for (int i = 0; i < numberOfDigits/ 2 + 1; i++) {
-			firstHalf *= 10;
-		}
-		for (int i = 0; i < numberOfDigitsPerHalf; i++) {
-			secondHalf *= 10;
-		}
-
-		firstHalf = input / firstHalf;
-		secondHalf = input % secondHalf;
-
-		for (int i = 0; i < numberOfDigitsPerHalf; i++) {
-			firstHalf *= 10;
-		}
-
-		newNumber = firstHalf + secondHalf;
-
-		std::cout << newNumber << ", " << newNumber + 1 << std::endl;
+	int numberOfDigitsPerHalf = numberOfDigits / 2;
+	if (numberOfDigits % 2 == 0) {
+		numberOfDigitsPerHalf--;
 	}
-	
-	return 0;
+
+	int firstHalf = 1, secondHalf = 1;
+	for (int i = 0; i < numberOfDigits / 2 + 1; i++) {
+		firstHalf *= 10;
+	}
+	for (int i = 0; i < numberOfDigitsPerHalf; i++) {
+		secondHalf *= 10;
+	}
+
+	firstHalf = input / firstHalf;
+	secondHalf = input % secondHalf;
+
+	for (int i = 0; i < numberOfDigitsPerHalf; i++) {
+		firstHalf *= 10;
+	}
+
+	int newNumber = firstHalf + secondHalf;
+	cout << newNumber << ", " << newNumber + 1 << endl;
 }
