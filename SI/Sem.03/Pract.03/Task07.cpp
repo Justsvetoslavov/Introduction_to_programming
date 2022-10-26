@@ -1,7 +1,7 @@
 #include <iostream>
 int main() {
-	int N = 1, a = 3, b = 4, c = 5;
-	std::cout << "Input natural number N: " << std::endl;
+	double N = 1, a = 3, b = 4, c = 5;
+	std::cout << "Enter a number: " << std::endl;
 	std::cin >> N;
 	if (N > 0) {
 		for (int i = 1; i <= N; i++) {
