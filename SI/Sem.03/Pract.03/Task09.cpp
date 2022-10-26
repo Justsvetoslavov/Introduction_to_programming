@@ -1,24 +1,23 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
-	int n = 0;
+	int n;
+	cin >> n;
 
-	std::cin >> n;
-
-	if (n > 3) {
-		int num1 = 1, num2 = 1;
-
-		std::cout << num1 << " " << num2 << " ";
-
-		while (num1 + num2 <= n) {
-			std::cout << num1 + num2 << " ";
-			const int temp = num1;
-			num1 = num2;
-			num2 = num1 + temp;
-		}
-	} else {
-		std::cout << "Invalid input." << std::endl;
+	if (n <= 3) {
+		cout << "Invalid input." << endl;
+		return 0;
 	}
 
-	return 0;
+	int num1 = 1, num2 = 1;
+	cout << num1 << " " << num2 << " ";
+
+	while (num1 + num2 < n) {
+		cout << num1 + num2 << " ";
+		int temp = num1;
+		num1 = num2;
+		num2 = num1 + temp;
+	}
 }

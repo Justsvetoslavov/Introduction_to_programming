@@ -1,29 +1,30 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
-	int n = 0;
+	int n;
 	char s;
+	cin >> n >> s;
 
-	std::cin >> n >> s;
-
-	const int numberOfRows = 2 * n - 1;
-
-	if (n >= 2 && n <= 9) {
-		for (int i = 1; i <= numberOfRows; i++) {
-			const int numberOfEmptySpaces = abs(n - i), numberOfSymbols = numberOfRows - 2 * numberOfEmptySpaces;
-
-			for (int j = 0; j < numberOfEmptySpaces; j++) {
-				std::cout << ' ';
-			}
-			for (int j = 0; j < numberOfSymbols; j++) {
-				std::cout << s;
-			}
-
-			std::cout << std::endl;
-		}
-	} else {
-		std::cout << "Invalid input." << std::endl;
+	if (n < 2 || n > 9) {
+		cout << "Invalid input." << endl;
+		return 0;
 	}
 
-	return 0;
+	int numberOfRows = 2 * n - 1;
+
+	for (int i = 1; i <= numberOfRows; i++) {
+		int numberOfEmptySpaces = abs(n - i);
+		int	numberOfSymbols = numberOfRows - 2 * numberOfEmptySpaces;
+
+		for (int j = 0; j < numberOfEmptySpaces; j++) {
+			cout << ' ';
+		}
+		for (int j = 0; j < numberOfSymbols; j++) {
+			cout << s;
+		}
+
+		cout << endl;
+	}
 }
