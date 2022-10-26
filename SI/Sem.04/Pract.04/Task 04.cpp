@@ -14,7 +14,7 @@ int abs(int num)
 
 double fabs(double num)
 {
-    if (num >= 0)
+    if (num >= DBL_EPSILON)
     {
         return num;
     }
