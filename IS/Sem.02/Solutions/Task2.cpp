@@ -17,4 +17,6 @@ int main()
 	} else {
 		cout << "Extremely fast" << endl;
 	}
+
+	return 0;
 }
