@@ -2,7 +2,7 @@
 int main() {
 	int numberInput = 2, numOfChars = 1;
 	char symbolInput = '*';
-	std::cout << "Import a num[2;9] and a char S: " << std::endl;
+	std::cout << "Enter a num[2;9] and a char S: " << std::endl;
 	std::cin >> numberInput;
 	std::cin >> symbolInput;
 	if (numberInput >= 2 && numberInput <= 9) {
