@@ -1,31 +1,48 @@
-#include <iostream>
+#include<iostream>
+#include<cmath>
 
-int main() {
-	double a = 0, b = 0, c = 0, D = 0, x1 = 0, x2 = 0;
+using namespace std;
 
-	std::cout << "Enter value for a: ";
-	std::cin >> a;
-	std::cout << "Enter value for b: ";
-	std::cin >> b;
-	std::cout << "Enter value for c: ";
-	std::cin >> c;
+int main()
+{
+	 cout << "Finding the root of the equation a * x^2 + b * x + c = 0\n";
 
-	D = b * b - 4 * a * c;
+     double a;
+	 cout << "Enter the value of a: ";
+	 cin >> a;
 
-	if (D < 0) {
-		std::cout << "There are no real solutions.\n";
-	}
-	else if (D == 0) {
-		x1 = (-b) / (2 * a);
+	 if (a < 0.00000001)
+	 {
+		  cout << "If a is 0, then this is not a quadratic equation!\n";
+		  return 1;
+	 }
+	 
+	 double b, c;
+	 cout << "Enter the value of b: ";
+	 cin >> b;
 
-		std::cout << "x = " << x1 << std::endl;
-	}
-	else {
-		x1 = (-b - sqrt(D)) / (2 * a);
-		x2 = (-b + sqrt(D)) / (2 * a);
+	 cout << "Enter the value of c: ";
+	 cin >> c;
+	 
+	 double discriminant;
+	 discriminant = (b * b) - (4 * a * c);
+	 
+	 double root1, root2, imaginary;
+	 if (discriminant > 0) {
+		  root1 = (-b + sqrt(discriminant)) / (2 * a);
+		  root2 = (-b - sqrt(discriminant)) / (2 * a);
 
-		std::cout << "x1 = " << x1 << std::endl << "x2 = " << x2 << std::endl;
-	}
+		  cout << "Two distinct and real roots exist: " << root1 << " and " << root2 << endl;
+	 } else if (discriminant == 0) {
+		  root1 = root2 = -b / (2 * a);
 
-	return 0;
+		  cout << "Two equal and real roots exist: " << root1 << " and " << root2 << endl;
+	 } else if (discriminant < 0) {
+		  root1 = root2 = -b / (2 * a);
+		  imaginary = sqrt(-discriminant) / (2 * a);
+
+		  cout << "Two distinct complex roots exist: " << root1 << "+" << imaginary << "i and " << root2 << "-" << imaginary << "i\n";
+	 }
+
+	 return 0;
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-	int percentage = 0, grade = 0;
+	int percentage, grade;
 
 	std::cout << "Result: ";
 	std::cin >> percentage;

@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-	double sideA = 0, sideB = 0, sideC = 0;
+	double sideA, sideB, sideC;
 
 	std::cout << "Enter value for side a: ";
 	std::cin >> sideA;
