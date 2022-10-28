@@ -9,4 +9,6 @@ int main()
 {
     std::cout << IsEven(2) << std::endl;
     std::cout << IsEven(1) << std::endl;
+    
+    return 0;
 }
