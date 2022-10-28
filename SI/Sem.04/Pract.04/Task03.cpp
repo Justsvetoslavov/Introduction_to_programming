@@ -1,16 +1,18 @@
 ﻿#include <iostream>
 
-using namespace std;
-
-bool isPositive(int num) {
+bool IsPositive(int num) 
+{
     return (num > 0);
 }
-bool isNegative(int num) {
+bool IsNegative(int num) 
+{
     return (num < 0);
 }
 
 int main()
 {
-    cout << isPositive(1) << endl;
-    cout << isNegative(-1) << endl;
+    std::cout << IsPositive(1) << std::endl;
+    std::cout << IsNegative(-1) << std::endl;
+    
+    return 0;
 }
