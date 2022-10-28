@@ -1,13 +1,12 @@
 ﻿#include <iostream>
 
-using namespace std;
-
-bool isEven(int num) {
-    return (num % 2 == 0);
+bool IsEven(int num)
+{
+    return num % 2 == 0;
 }
 
 int main()
 {
-    cout << isEven(2) << endl;
-    cout << isEven(1) << endl;
+    std::cout << IsEven(2) << std::endl;
+    std::cout << IsEven(1) << std::endl;
 }
