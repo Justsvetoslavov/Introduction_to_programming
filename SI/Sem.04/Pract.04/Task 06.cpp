@@ -2,26 +2,12 @@
 
 bool isCapitalLetter(char S)
 {
-    if (S >= 'A' && S <= 'Z')
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return (S >= 'A' && S <= 'Z');
 }
 
 bool checkSymbol(char S)
 {
-    if ((S >= 'A' && S <= 'Z') || (S>='a' && S<='z'))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return ((S >= 'A' && S <= 'Z') || (S >= 'a' && S <= 'z'));
 }
 
 int main()
