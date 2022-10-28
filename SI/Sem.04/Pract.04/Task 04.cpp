@@ -2,26 +2,14 @@
 
 int abs(int num)
 {
-    if (num >= 0)
-    {
-        return num;
-    }
-    else
-    {
-        return -num;
-    }
+    int result=(num >= 0) ? num :  -num;
+    return result;
 }
 
 double fabs(double num)
 {
-    if (num >= DBL_EPSILON)
-    {
-        return num;
-    }
-    else
-    {
-        return -num;
-    }
+   int result = (num >= DBL_EPSILON) ? num : -num;
+    return result;
 }
 
 int main()
