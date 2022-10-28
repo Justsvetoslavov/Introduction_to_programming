@@ -2,26 +2,12 @@
 
 bool isPositive(int num)
 {
-    if (num > 0)
-    {
-        return true;
-    }
-    else 
-    { 
-        return false;
-    }
+   return (num>0);
 }
 
 bool isNegative(int num)
 {
-    if (num < 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return (num<0);
 }
 
 int main()
