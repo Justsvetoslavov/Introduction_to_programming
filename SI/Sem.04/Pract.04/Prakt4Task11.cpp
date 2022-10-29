@@ -23,7 +23,7 @@ int main()
     cin >> a >> b >> c >> d;
     cout << "GCD of a and b is:" << GCD(a, b) << endl;
     cout << "GCD of c and d is:" << GCD(c, d) << endl;
-    cout << "GCD of a, b, c and d is:" << GCD(GCD(a, b), GCD(c, d));  //????
+    cout << "GCD of a, b, c and d is:" << GCD(GCD(a, b), GCD(c, d));  
     return 0;
 }
 
