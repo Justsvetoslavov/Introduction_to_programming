@@ -1,31 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int checkInput(int a) {
-	while (a < 100 || a > 1000000) {
-		cout << "Wrong input. Try again" << endl;
-		cin >> a;
-	}
-	return a;
+int checkInput() {
+	int input;
+	do {
+		cout << "Enter input: " << endl;
+		cin >> input;
+	} while (input < 100 || input > 1000000);
+
+	return input;
 }
 
 int findTheNearest(int input) {
 	int result = 64; // The nearest possible value
+	int lower, higher;
 	while (result <= input) {
+		lower = result;
 		result *= 2;
+		higher = result;
 	};
-	return result / 2;
+
+	result = ((higher - input) > (input - lower)) ? lower : higher;
+	return result;
 }
 
 int main()
 {
+	int input = checkInput();
 
-	int a;
-	cin >> a;
-
-	int rightInput = checkInput(a);
-
-	cout << findTheNearest(rightInput);
+	cout << findTheNearest(input);
 
 	return 0;
 
