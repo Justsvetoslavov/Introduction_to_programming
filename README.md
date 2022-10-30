@@ -70,5 +70,3 @@
 | :boom: **DANGER**|
 |:-----------------|
 | ***If a pull request has more than 3 tasks or the title or description are not in the format described above, the PR will be rejected and will not be reviewed.***|
-
-
