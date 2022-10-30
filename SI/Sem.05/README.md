@@ -4,7 +4,7 @@
 Отделен елемент на масива се достъпва посредством името на масива, последвано от поредния номер (индекс) на елемента в квадратни скоби.
 
 ```c++
-    <тип> <име>[<размер>]
+<тип> <име>[<размер>]
 ```
 ![array-example](https://simplesnippets.tech/wp-content/uploads/2018/03/array-diagram.jpg)
 
@@ -21,14 +21,14 @@
 Задължително големината на масива трябва да е константа, чиято стойност е ясна преди да се компилира програмата.
 
 ```c++
-	int n;
-	cin >> n;
-	int arr[n]; //грешка!
+int n;
+cin >> n;
+int arr[n]; //грешка!
 ```
 
 ```c++
-	const int SIZE = 4;
-	int arr[SIZE]; //ok!
+const int SIZE = 4;
+int arr[SIZE]; //ok!
 ```
 
 ## Достъп на елемент
@@ -36,18 +36,19 @@
 Достъпът става посредством индекси. Индексацията започва от 0. <br />
 
 ```c++
-   int arr[] = {1, 2, 400, 4, 5}
+int arr[] = {1, 2, 400, 4, 5}
 
-   arr[3] = 44; //Присвоява на елементът на индекс 3 стойността 44.
-                // [1, 2, 400, 44, 5]
+arr[3] = 44; //Присвоява на елементът на индекс 3 стойността 44.
+             // [1, 2, 400, 44, 5]
 
-    std::cout << arr[2]; //Отпечатва на стандартния изход елементът на индекс 2 (400)
+std::cout << arr[2]; //Отпечатва на стандартния изход елементът на индекс 2 (400)
 ```
 
 arr не е самият масив, а **указател към първия елемент**.
 ```c++
-   int arr[] = {1, 2, 400, 4, 5}
-   std::cout << arr; //ще се отпечата АДРЕСА на масива, но не и самия масив.
+int arr[] = {1, 2, 400, 4, 5}
+
+std::cout << arr; //ще се отпечата АДРЕСА на масива, но не и самия масив.
 ```
 
 Достъпът до елемент става, чрез смятането адреса му.  <br />
@@ -56,69 +57,69 @@ i е брой "отмествания" надясно.  <br />
 
 ## Подаване на масиви във функции
 ```c++
-    #include <iostream>
 
-    using namespace std;
+#include <iostream>
 
-    void print(const int arr[], int len)
+void Print(const int arr[], int len)
+{
+	for(int i = 0; i < len; i++)
     {
-	    for(int i = 0; i < len; i++)
-	    {
-	        cout << arr[i] << " ";
-	    }
+		std::cout << arr[i] << " ";
 	}
+}
 
-	void increment(int[] arr, unsigned size)
+void Increment(int[] arr, unsigned size)
+{
+	for(unsigned i = 0; i < size; i++)
 	{
-		for(unsigned i = 0; i < size; i++)
-        {
-			arr[i]++;
-        }
+		arr[i]++;
 	}
+}
 
-	int main()
-	{
-	    const int SIZE = 4;
-	    int arr[SIZE] {1, 2, 3, 4};
+int main()
+{
+	const int SIZE = 4;
+	int arr[SIZE] {1, 2, 3, 4};
     
-        increment(arr, SIZE);
-	    print(arr,SIZE);
+    Increment(arr, SIZE);
+	Print(arr,SIZE);
     
-	    return 0;
-    }
+	return 0;
+}
 ```
 
 ```c++
-    #include <iostream>
+#include <iostream>
 
-    using namespace std;
+using namespace std;
 
-    void print(const int* arr, int len)
-    {
-	    for(int i = 0; i < len; i++)
-	    {
-	        cout << arr[i] << " ";
-	    }
-	}
-
-	void increment(int* arr, unsigned size)
+void print(const int* arr, int len)
+{
+	for(int i = 0; i < len; i++)
 	{
-		for(unsigned i = 0; i < size; i++)
-        {
-			arr[i]++;
-        }
+		std::cout << arr[i] << " ";
 	}
+}
 
-	int main()
+void Increment(int* arr, unsigned size)
+{
+	for(unsigned i = 0; i < size; i++)
 	{
-	    const int SIZE = 4;
-	    int arr[SIZE] {1, 2, 3, 4};
-    
-        increment(arr, SIZE);
-	    print(arr,SIZE);
-    
-	    return 0;
+		arr[i]++;
     }
+}
+	
+
+int main()
+{
+	const int SIZE = 4;
+	int arr[SIZE] {1, 2, 3, 4};
+    
+    Increment(arr, SIZE);
+	Print(arr,SIZE);
+    
+	return 0;
+}
 ```
 
 Масивите се подават във функциите по адрес!  <br />
@@ -131,23 +132,24 @@ i е брой "отмествания" надясно.  <br />
 Адресът на променливата, с която работим, се присвоява на указателя. <br />
 
 ```c++
-	int number = 5;
-    int *ptr = &number; //указател, който пази адреса на променливата number
 
-    std::cout << ptr << endl; //отпечатва адреса на променливата number
-    std::cout << *ptr << endl; //отпечатва стойността на променливата number (дереференция)
+int number = 5;
+int *ptr = &number; //указател, който пази адреса на променливата number
+
+std::cout << ptr << endl; //отпечатва адреса на променливата number
+std::cout << *ptr << endl; //отпечатва стойността на променливата number (дереференция)
 ```
 
 ### Двумерни масиви.
 
 ```c++
-	int matrix1[3][4]; // създава се матрица с 3 реда и 4 колони
+int matrix1[3][4]; // създава се матрица с 3 реда и 4 колони
 
-	int matrix2[3][3] = { { 1, 2, 3}, { 4, 5, 6 }, {7, 8, 9} }; // изреждаме редовете
+int matrix2[3][3] = { { 1, 2, 3}, { 4, 5, 6 }, {7, 8, 9} }; // изреждаме редовете
 
-	int matrix3[3][4] = { 1, 2, 3, 4, 9, 8, 7, 6, 11, 12, 13, 14 }; // изреждаме елементите
+int matrix3[3][4] = { 1, 2, 3, 4, 9, 8, 7, 6, 11, 12, 13, 14 }; // изреждаме елементите
 
-	int matrix4[][4] = { 1, 2, 3, 4, 9, 8, 7, 6, 11, 12, 13, 14 }; // можем да изпуснем най-лявата спецификация на дължина
+int matrix4[][4] = { 1, 2, 3, 4, 9, 8, 7, 6, 11, 12, 13, 14 }; // можем да изпуснем най-лявата спецификация на дължина
 
 ```
 ![2d=array](https://media.geeksforgeeks.org/wp-content/uploads/two-d.png)
@@ -155,26 +157,27 @@ i е брой "отмествания" надясно.  <br />
 ### Достъп до елемент.
 
 ```c++
-	int matrix4[][4] = { 1, 2, 3, 4, 9, 8, 7, 6, 11, 12, 13, 14 };
+int matrix4[][4] = { 1, 2, 3, 4, 9, 8, 7, 6, 11, 12, 13, 14 };
 
-    int* row = matrix4[1]; //ред 1 (масивът на индекс 1)
+int* row = matrix4[1]; //ред 1 (масивът на индекс 1)
 
- 	std::cout << matrix4[2][0]<< std::endl //11;
+std::cout << matrix4[2][0]<< std::endl //11;
 
- 	std::cout << row[2]<< std::endl //7;
+std::cout << row[2]<< std::endl //7;
 ```
 
 ### Примери с n-мерни масиви.
 
 ```c++
- 	int cube[3][3][3]; // създава се тримерен масив  
+int cube[3][3][3]; // създава се тримерен масив  
 ```
- ### Достъп до елемент.
+
+### Достъп до елемент.
 
 ```c++
- 	cube[2]    // двумерен масив;
- 	cube[2][1] // едномерен масив;
- 	cube[2][1][4] // конкретен елемент;
+cube[2]    // двумерен масив;
+cube[2][1] // едномерен масив;
+cube[2][1][4] // конкретен елемент;
 ```
 
 ![3d=array](https://media.geeksforgeeks.org/wp-content/uploads/3D-array.jpg)
