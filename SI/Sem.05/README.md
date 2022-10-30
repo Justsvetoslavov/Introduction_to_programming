@@ -11,11 +11,11 @@
 ## Инициализация на масиви
 
 ```c++
-    int arr[5]; // Създава масив от 5 елемента, всеки от които е цяло число.
-    int arr2[] = {34, 21, 2, 66, 567}; // Създава масив от 5 елемента.
-    int arr3[5] = {1,2,3}; //Останалите елементи се запълват с default-на стойност. 
-    int arr4[]; //грешка
-    int arr5[4] = {1, 2, 3, 4, 5} // грешка
+int arr[5]; // Създава масив от 5 елемента, всеки от които е цяло число.
+int arr2[] = {34, 21, 2, 66, 567}; // Създава масив от 5 елемента.
+int arr3[5] = {1,2,3}; //Останалите елементи се запълват с default-на стойност. 
+int arr4[]; //грешка
+int arr5[4] = {1, 2, 3, 4, 5} // грешка
 ```
 
 Задължително големината на масива трябва да е константа, чиято стойност е ясна преди да се компилира програмата.
@@ -57,20 +57,19 @@ i е брой "отмествания" надясно.  <br />
 
 ## Подаване на масиви във функции
 ```c++
-
 #include <iostream>
 
 void Print(const int arr[], int len)
 {
-	for(int i = 0; i < len; i++)
-    {
+	for (int i = 0; i < len; i++)
+	{
 		std::cout << arr[i] << " ";
 	}
 }
 
-void Increment(int[] arr, unsigned size)
+void Increment(int arr[], unsigned size)
 {
-	for(unsigned i = 0; i < size; i++)
+	for (unsigned i = 0; i < size; i++)
 	{
 		arr[i]++;
 	}
@@ -79,11 +78,11 @@ void Increment(int[] arr, unsigned size)
 int main()
 {
 	const int SIZE = 4;
-	int arr[SIZE] {1, 2, 3, 4};
-    
-    Increment(arr, SIZE);
-	Print(arr,SIZE);
-    
+	int arr[SIZE]{ 1, 2, 3, 4 };
+
+	Increment(arr, SIZE);
+	Print(arr, SIZE);
+
 	return 0;
 }
 ```
@@ -93,9 +92,9 @@ int main()
 
 using namespace std;
 
-void print(const int* arr, int len)
+void Print(const int* arr, int len)
 {
-	for(int i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::cout << arr[i] << " ";
 	}
@@ -103,21 +102,21 @@ void print(const int* arr, int len)
 
 void Increment(int* arr, unsigned size)
 {
-	for(unsigned i = 0; i < size; i++)
+	for (unsigned i = 0; i < size; i++)
 	{
 		arr[i]++;
-    }
+	}
 }
-	
+
 
 int main()
 {
 	const int SIZE = 4;
-	int arr[SIZE] {1, 2, 3, 4};
-    
-    Increment(arr, SIZE);
-	Print(arr,SIZE);
-    
+	int arr[SIZE]{ 1, 2, 3, 4 };
+
+	Increment(arr, SIZE);
+	Print(arr, SIZE);
+
 	return 0;
 }
 ```
