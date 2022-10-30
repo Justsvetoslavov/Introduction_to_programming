@@ -1,0 +1,16 @@
+name: Add Label to New Pull-request
+description: Add labels to a pull request.
+author: Nikola Svetoslavov
+
+on:
+  issues:
+    types: opened
+jobs:
+  add_label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.comment.body, '/add-labels') }}
+        with:
+          labels: new
