@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 int checkInput() {
@@ -31,5 +32,4 @@ int main()
 	cout << findTheNearest(input);
 
 	return 0;
-
 }
