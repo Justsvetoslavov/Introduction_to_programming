@@ -45,7 +45,7 @@ int main()
 ```c++
 int max(int n, int k)
 {
-	  return n > k ? n : k;
+    return n > k ? n : k;
 }
 ```
 
@@ -55,19 +55,33 @@ int max(int n, int k)
 
 void f(int n)
 {
-	  n++;
+    n++;
 }
 
 int main()
 {
-	  int n = 4;
-	  f(n);
-	  std::cout << n << endl; //4
+    int n = 4;
+    f(n);
+    std::cout << n << endl; //4
     
     return 0;
 }
 ```
 Важно: Функциите, написани по този начин, приемат своите параметри **по копие**.
+
+### Параметри по референция
+Алтернативно име на съществуваща променлива. Променливата може да бъде декларирана като референция чрез **&**. <br />
+Ако функция получи рефенция към променлива, тя може да променя(modify) стойността на променливата(директно). <br />
+По този начин предотвратява копирането на данни. <br />
+
+```c++
+void swap(double &a, double &b)
+{
+    double temp = a;
+    a = b;
+    b = temp;
+}
+```
 
 ### Function overloading
 Една функция може да има безброй много overloads. <br />
@@ -77,45 +91,45 @@ int main()
 Ако намери повече от 1 подходящ се получава грешка за двусмислие. <br />
 
 ```c++
-void cout(char a) { std::cout << a; } //1
+    void cout(char a) { std::cout << a; } //1
 
-void cout(int a) { std::cout << a; } //2
+    void cout(int a) { std::cout << a; } //2
 
-void cout(char a, int b) { std::cout << a << '-' << b; } //3
+    void cout(char a, int b) { std::cout << a << '-' << b; } //3
 
-void cout(double a, char b) { std::cout << b << '-' << a; } //4
+    void cout(double a, char b) { std::cout << b << '-' << a; } //4
 
-void cout(bool a) { std::cout << a; } //5
+    void cout(bool a) { std::cout << a; } //5
 
-void cout(char a, bool b, int c) { std::cout << a <<b << c; } //6
+    void cout(char a, bool b, int c) { std::cout << a <<b << c; } //6
 
-void cout(const int a) { std::cout << a; } //7
+    void cout(const int a) { std::cout << a; } //7
 
-void cout(char a, unsigned b) { std::cout << a << '-' <<b; } //8
+    void cout(char a, unsigned b) { std::cout << a << '-' <<b; } //8
 
-char cout(char a) { return a; } //9
+    char cout(char a) { return a; } //9
 ```
 
 ```c++
-void cout(char a) { std::cout << a; } //двусмислие с 9
+    void cout(char a) { std::cout << a; } //двусмислие с 9
 
-void cout(int a) { std::cout << a; } // двусмислие със 7
+    void cout(int a) { std::cout << a; } // двусмислие със 7
 
-void cout(char a, int b) { std::cout << a << '-' << b; } //двусмислие с 8
+    void cout(char a, int b) { std::cout << a << '-' << b; } //двусмислие с 8
 
-/*-------------------------------------------------------*/
-void cout(double a, char b) { std::cout << b << '-' << a; }
+    /*-------------------------------------------------------*/
+    void cout(double a, char b) { std::cout << b << '-' << a; }
 
-void cout(bool a) { std::cout << a; }
+    void cout(bool a) { std::cout << a; }
 
-void cout(char a, bool b, int c) { std::cout << a << b << c; }
-/*-------------------------------------------------------*/
+    void cout(char a, bool b, int c) { std::cout << a << b << c; }
+    /*-------------------------------------------------------*/
 
-void cout(const int a) { std::cout << a; } // двусмислие с 2
+    void cout(const int a) { std::cout << a; } // двусмислие с 2
 
-void cout(char a, unsigned b) { std::cout << a << '-' << b; } // двусмислие с 3
+    void cout(char a, unsigned b) { std::cout << a << '-' << b; } // двусмислие с 3
 
-char cout(char a) { return a; } // двусмислие с 1
+    char cout(char a) { return a; } // двусмислие с 1
 ```
 
 **Важно!** <br />
