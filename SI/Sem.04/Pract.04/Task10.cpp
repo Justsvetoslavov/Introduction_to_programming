@@ -6,7 +6,7 @@ int binarySystem(int num)
     int i = 1;
     while (num > 0)
     {
-       binaryNum = binaryNum + (num % 2)*i;
+       binaryNum += (num % 2)*i;
         num /= 2;
         i = i * 10;
     }
@@ -20,4 +20,3 @@ int main()
     cout << binarySystem(num);
     return 0;
 }
-
