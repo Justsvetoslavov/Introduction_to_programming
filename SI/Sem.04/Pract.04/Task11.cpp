@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
 
+using namespace std;
 
 int biggestCommonFactor(int a, int b) {
 	int result = 1;
@@ -14,13 +14,11 @@ int biggestCommonFactor(int a, int b) {
 	return result;
 }
 
-
-
-int main() {
-
-
+int main()
+{
 	int a, b, c, d;
 	cin >> a >> b >> c >> d;
+	
 	int factorFirst = biggestCommonFactor(a, b);
 	int factorSecond = biggestCommonFactor(c, d);
 
