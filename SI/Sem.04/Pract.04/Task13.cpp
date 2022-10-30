@@ -23,8 +23,7 @@ void exportPrimes(int number) {
 
 bool isSum(int numberToTest) {
 	for (int i = 1; i <= numberToTest / 2; i++) {
-		int firstNumber = i - 1;
-		if (checkPrime(firstNumber) && checkPrime(i)) {
+		if (checkPrime(i - 1) && checkPrime(i)) {
 			return true;
 		}
 	}
