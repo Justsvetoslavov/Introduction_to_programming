@@ -1,0 +1,20 @@
+# Include the label 'new' in fresh/newly made pull requests
+
+name: Pull Request Labeler
+on:
+  pull_request:
+    types: ['opened', 'edited']
+    
+jobs:
+  add-label:
+    name: New Pull Request Label
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: christianvuerings/add-labels@v1
+        with:
+          labels: |
+            :new: new
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
