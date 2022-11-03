@@ -1,6 +1,6 @@
 #include <iostream>
 
-int sumOfDigits(long long n) {
+long long sumOfDigits(long long n) {
 	long long sumOfDigits = 0;
 	while (n != 0) {
 		sumOfDigits += n % 10;
@@ -18,4 +18,6 @@ int main() {
 		n = sumOfDigits(n);
 	}
 	std::cout << n << std::endl;
+  
+  return 0;
 }

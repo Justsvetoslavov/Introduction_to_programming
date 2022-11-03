@@ -35,4 +35,6 @@ int main() {
 	int n;
 	std::cin >> n;
 	factorise(n);
+  
+  return 0;
 }
