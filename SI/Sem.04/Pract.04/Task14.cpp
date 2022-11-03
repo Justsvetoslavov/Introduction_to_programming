@@ -1,29 +1,23 @@
 #include <iostream>
-using namespace std;
 
-int sumDigits(int number) {
-	int sum = 0;
-	while (number > 0) {
-		sum = sum + (number % 10);
-		number /= 10;
+long long sumOfDigits(long long n) {
+	long long sumOfDigits = 0;
+	while (n != 0) {
+		sumOfDigits += n % 10;
+		n /= 10;
 	}
-
-	return sum;
+	return sumOfDigits;
 }
 
-
-int main()
-{
-
-	int a;
-	cin >> a;
-
-	while (a >= 10) {
-		a = sumDigits(a);
+int main() {
+	std::cout << "enter a number: " << std::endl;
+	long long n;
+	std::cin >> n;
+	while (n >= 10) {
+		std::cout << n << " -> ";
+		n = sumOfDigits(n);
 	}
-
-	cout << a;
-
-	return 0;
-
+	std::cout << n << std::endl;
+  
+  return 0;
 }
