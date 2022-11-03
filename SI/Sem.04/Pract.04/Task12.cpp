@@ -1,35 +1,54 @@
-#include <iostream>
+// Task12.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 
+#include <iostream>
+#include <cmath>
 using namespace std;
 
-int checkInput() {
-	int input;
-	do {
-		cout << "Enter input: " << endl;
-		cin >> input;
-	} while (input < 100 || input > 1000000);
+int smallestNumber(int a)
+{
+    for (int i = a; i >= 0; --i)
+    {
 
-	return input;
+        if ((int)(log(i) / log(2)) == log(i) / log(2))
+        {
+            return  i;
+        }
+
+    }
 }
 
-int findTheNearest(int input) {
-	int result = 64; // The nearest possible value
-	int lower, higher;
-	while (result <= input) {
-		lower = result;
-		result *= 2;
-		higher = result;
-	};
+int biggestNumber(int a)
+{
+    int max = pow(a, 2);
+    for (int i = a + 1; i < max; ++i)
+    {
 
-	result = ((higher - input) > (input - lower)) ? lower : higher;
-	return result;
+        if ((int)(log(i) / log(2)) == log(i) / log(2))
+        {
+            return i;
+        }
+    }
 }
 
 int main()
 {
-	int input = checkInput();
+    int n;
+    cin >> n;
 
-	cout << findTheNearest(input);
+    if (n < 100 || n > 100000)
+    {
+	    cin >> n;
+    }
+    int smallestNum = smallestNumber(n);
+    int biggestNum = biggestNumber(n);
 
-	return 0;
+    if (n - smallestNum > biggestNum - n)
+    {
+        cout << biggestNum;
+    }
+    else
+    {
+        cout << smallestNum;
+    }
 }
