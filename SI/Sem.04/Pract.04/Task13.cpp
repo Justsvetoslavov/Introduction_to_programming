@@ -1,45 +1,44 @@
 #include <iostream>
-#include <cmath>
 
-bool isPrime(int n) {
-	if (n == 1) {
-		return false;
-	}
-	for (int i = 2; i <= sqrt(n); i++) {
-		if (n % i == 0) {
+using namespace std;
+
+bool checkPrime(int input) {
+	for (int i = 2; i < input; i++) {
+		if (input % i == 0) {
 			return false;
 		}
 	}
+
 	return true;
 }
 
-void printAllPrimesTo(int n) {
-	for (int i = 2; i <= n; i++) {
-		if (isPrime(i)) {
-			std::cout << i << " ";
+void exportPrimes(int number) {
+	cout << "The primes are: " << endl;
+	for (int i = 2; i < number; i++) {
+		bool isPrime = checkPrime(i);
+		if (isPrime) {
+			cout << i << endl;
 		}
 	}
-	std::cout << std::endl;
 }
 
-void sumOfPrimeNumbers(int n) {
-	for (int i = 2; i <= n; i++) {
-		for (int j = 2; j <= n; j++) {
-			if (isPrime(i) && isPrime(j) && i+j==n) {
-				std::cout << i << " + " << j << " = " << n << std::endl;
-				return;
-			}
+bool isSum(int numberToTest) {
+	for (int i = 1; i <= numberToTest / 2; i++) {
+		if (checkPrime(i - 1) && checkPrime(i)) {
+			return true;
 		}
 	}
-	std::cout << "cannot be represented as sum of two prime numbers." << std::endl;
+
+	return false;
 }
-int main() {
-	std::cout << "enter a number:" << std::endl;
-	int n;
-	std::cin >> n;
-	std::cout << "is n prime: " << std::boolalpha << isPrime(n) << std::endl;
-	std::cout << "all primes to " << n << ": " << std::endl;
-	printAllPrimesTo(n);
-	std::cout << "representation as sum of two prime numbers:" << std::endl;
-	sumOfPrimeNumbers(n);
+
+int main()
+{
+	int a;
+	cin >> a;
+
+	cout << isSum(a) << endl;
+	exportPrimes(a);
+
+	return 0;
 }
