@@ -160,9 +160,9 @@ int matrix4[][4] = { 1, 2, 3, 4, 9, 8, 7, 6, 11, 12, 13, 14 };
 
 int* row = matrix4[1]; //ред 1 (масивът на индекс 1)
 
-std::cout << matrix4[2][0]<< std::endl //11;
+std::cout << matrix4[2][0]<< std::endl; //11
 
-std::cout << row[2]<< std::endl //7;
+std::cout << row[2]<< std::endl; //7
 ```
 
 ### Примери с n-мерни масиви.
