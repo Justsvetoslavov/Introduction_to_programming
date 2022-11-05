@@ -1,18 +1,19 @@
 #include <iostream>
 
-using namespace std;
+const int LowerBound = 100;
+const int UpperBound = 1000000;
 
-int checkInput() {
-	int input;
+int CheckInput() {
+	int number;
 	do {
-		cout << "Enter input: " << endl;
-		cin >> input;
-	} while (input < 100 || input > 1000000);
+		std::cout << "Enter a valid number: ";
+		std::cin >> number;
+	} while (!std::cin || number < LowerBound || number > UpperBound);
 
-	return input;
+	return number;
 }
 
-int findTheNearest(int input) {
+int FindTheNearest(int input) {
 	int result = 64; // The nearest possible value
 	int lower, higher;
 	while (result <= input) {
@@ -23,13 +24,4 @@ int findTheNearest(int input) {
 
 	result = ((higher - input) > (input - lower)) ? lower : higher;
 	return result;
-}
-
-int main()
-{
-	int input = checkInput();
-
-	cout << findTheNearest(input);
-
-	return 0;
 }
