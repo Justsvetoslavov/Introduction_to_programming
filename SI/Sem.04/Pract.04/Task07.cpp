@@ -8,7 +8,7 @@ long long askUser(long long from, long long to)
 	long long number;
 	while (std::cin >> number)
 	{
-		if (isNumberInInterval(number,from,to)) {
+		if (isNumberInInterval(number, from, to)) {
 			return number;
 		}
 	}
