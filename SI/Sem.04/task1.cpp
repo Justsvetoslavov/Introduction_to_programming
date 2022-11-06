@@ -1,7 +1,7 @@
 int Reverse(unsigned int n)
 {
 	unsigned int result;
-    short lastDigit;
+	short lastDigit;
 
 	while (n != 0)
 	{
