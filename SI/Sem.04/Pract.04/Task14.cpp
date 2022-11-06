@@ -6,3 +6,18 @@ long long SumOfDigits(long long n) {
 	}
 	return sumOfDigits;
 }
+
+int main()
+{
+	long long n;
+	std::cout << "Enter a number: " << std::endl;
+	std::cin >> n;
+	
+	while (n >= 10) {
+		std::cout << n << " -> ";
+		n = sumOfDigits(n);
+	}
+	std::cout << n << std::endl;
+	
+	return 0;
+}
