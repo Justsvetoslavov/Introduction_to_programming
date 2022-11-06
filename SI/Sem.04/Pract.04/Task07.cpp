@@ -1,6 +1,6 @@
 ﻿bool isNumberInInterval(long long num, long long lowerBound, long long upperBound)
 {
-	return num >= interval_lower_bound && num <= interval_upper_bound
+	return interval_lower_bound <= num && num <= interval_upper_bound
 }
 
 long long askUser(long long from, long long to)
