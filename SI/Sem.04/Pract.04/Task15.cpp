@@ -1,40 +1,34 @@
 #include <iostream>
 
-bool isPrime(int n) {
-	if (n == 1) {
-		return false;
-	}
-	for (int i = 2; i <= sqrt(n); i++) {
-		if (n % i == 0) {
+//Function to check whether a number is prime
+bool IsPrime(int number)
+{
+	int size = sqrt(number);
+	                         
+	for (int i = 2; i <= size; i++)
+	{
+		if (number % i == 0) {
 			return false;
 		}
 	}
+
 	return true;
 }
 
-void factorise(int n) {
-	if (isPrime(n)) {
-		std::cout << "number is prime." << std::endl;
-		return;
-	}
-	std::cout << n << " = ";
-	for (int i = 2; i <= n; i++) {
-		if (n % i == 0) {
-			std::cout << i;
-			if (!isPrime(n)) {
-				std::cout << ".";
+//PrimeFactorization 
+void PrimeFactor(int number)
+{
+	for (int i = 2; i <= number; i++) {
+		if (IsPrime(i) && number % i == 0) {
+			if (i == number) { //last step, no space
+				std::cout << i;
+	        } else {
+				std::cout << i << " ";
 			}
-			n /= i;
-			i = 1;
+
+			number /= i;
+			i--;
 		}
 	}
-}
-
-int main() {
-	std::cout << "enter number: " << std::endl;
-	int n;
-	std::cin >> n;
-	factorise(n);
-  
-  return 0;
+	std::cout << std::endl;
 }
