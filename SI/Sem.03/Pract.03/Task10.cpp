@@ -1,43 +1,33 @@
 #include <iostream>
 
 int main() {
-	int input = 0, numberOfDigits = 0;
+	int input = 0, numberOfDigits = 0, numberOfZeroes = 1, newNumber = 0, firstMiddleDigit = 0, secondMiddleDigit = 0;
 
 	std::cin >> input;
 
-	{
-		int inputCopy = input;
+	int inputCopy = input;
 
-		while (inputCopy != 0) {
-			inputCopy /= 10;
-			numberOfDigits++;
-		}
+	while (inputCopy != 0) {
+		numberOfDigits++;
+		numberOfZeroes *= 10;
+		inputCopy /= 10;
 	}
 
-	{
-		int firstHalf = 1, secondHalf = 1, numberOfDigitsPerHalf = 0, newNumber = 0;
+	numberOfZeroes /= 10;
+	firstMiddleDigit = (numberOfDigits - 1) / 2;
+	secondMiddleDigit = numberOfDigits / 2;
 
-		numberOfDigitsPerHalf = numberOfDigits / 2;
-		if (numberOfDigits % 2 == 0) numberOfDigitsPerHalf--;
-
-		for (int i = 0; i < numberOfDigits/ 2 + 1; i++) {
-			firstHalf *= 10;
-		}
-		for (int i = 0; i < numberOfDigitsPerHalf; i++) {
-			secondHalf *= 10;
+	for (int i = 0; i < numberOfDigits; i++) {
+		if (i != firstMiddleDigit && i != secondMiddleDigit) {
+			newNumber *= 10;
+			newNumber += (input / numberOfZeroes);
 		}
 
-		firstHalf = input / firstHalf;
-		secondHalf = input % secondHalf;
-
-		for (int i = 0; i < numberOfDigitsPerHalf; i++) {
-			firstHalf *= 10;
-		}
-
-		newNumber = firstHalf + secondHalf;
-
-		std::cout << newNumber << ", " << newNumber + 1 << std::endl;
+		input %= numberOfZeroes;
+		numberOfZeroes /= 10;
 	}
-	
+
+	std::cout << newNumber << ", " << newNumber + 1;
+
 	return 0;
 }
