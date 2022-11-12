@@ -4,7 +4,7 @@ bool isPalindrom(const int* arr, int size)
 	{
 		if (arr[i] != arr[size - i - 1]) {
 			return false;
-        }
+                }
 	}
 	return true;
 }
