@@ -1,34 +1,22 @@
-#include <iostream>
-using namespace std;
-
-long long intToBinary(int num)
+long long toBinary(unsigned number)
 {
-    int binaryNumber[32];
-    long long result = 0;
+	int buffer[MAX_POWTWO_SIZE];
+	int size = 0;
 
-    int i = 0;
-    while (num > 0) 
-    {
-        binaryNumber[i] = num % 2;
-        num /= 2;
-        i++;
-    }
+	while (number > 0)
+	{
+		buffer[size] = number % 2;
+		number /= 2;
+		size++;
+	}
 
-    for (int j = i - 1; j >= 0; j--)
-    {
-        result += binaryNumber[j];
-        result *= 10;
-    }
+	long long convertedToBinary = 0;
+	long long multiply = 1;
+	for (unsigned i = 0; i < size; i++)
+	{
+		convertedToBinary += buffer[i] * multiply;
+		multiply *= 10;
+	}
 
-    return (result / 10);
-}
-
-int main()
-{
-    int number;
-
-    cout << "Enter one whole number: ";
-    cin >> number;
-
-    cout << intToBinary(number);
+	return convertedToBinary;
 }
