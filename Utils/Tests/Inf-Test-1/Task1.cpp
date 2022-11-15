@@ -1,12 +1,12 @@
 #include <iostream>
 
-inline int Abs(int input) {
+int Abs(int input)
+{
 	return input >= 0 ? input : -input;
 }
 
 void Compass(double x1, double y1, double x2, double y2) {
-	double	xDistance = Abs(x1 - x2), 
-			yDistance = Abs(y1 - y2);
+	double	xDistance = Abs(x1 - x2), yDistance = Abs(y1 - y2);
 
 	if (xDistance <= 0.1 && yDistance <= 0.1) {
 		std::cout << "You're there already!";
@@ -16,7 +16,8 @@ void Compass(double x1, double y1, double x2, double y2) {
 	}
 }
 
-int main() {
+int main()
+{
 	double x1 = 0, y1 = 0, x2 = 0, y2 = 0;
 
 	std::cin >> x1 >> y1 >> x2 >> y2;
