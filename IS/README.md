@@ -6,3 +6,4 @@
 - [Тема 3:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/IS/Sem.03) Цикли. Оператори break и continue.
 - [Тема 4:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/IS/Sem.04) Функции.
 - [Тема 5:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/IS/Sem.05) Масиви. Основни операции, обхождане на елементите, търсене.  Многомерни масиви.
+- [Тема 6:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/IS/Sem.06) Бройни системи и побитови операции.
