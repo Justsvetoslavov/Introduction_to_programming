@@ -1,7 +1,7 @@
 ## Референция/Reference
 
 Алтернативно име за съществуваща променлива. <br />
-Променлива може да бъде декларирана като референция чрез ‘ & ’.  <br />
+Променлива може да бъде декларирана като референция чрез ** & **.  <br />
 Ако функция получи референция към променлива, тя може да променя(modify) стойността на променливата(директно).  <br />
 Може да предотврати копирането на големи структури от данни.  <br />
 
@@ -38,14 +38,14 @@ int main()
     unsigned int MomMoney = FamilyMoney;
     unsigned int FatherMoney = FamilyMoney;
     MomMoney -= 30;
-    std::cout << MomMoney << ', '<< FatherMoney; //70,100
+    std::cout << MomMoney << ', '<< FatherMoney; //70, 100
 
     //with reference
     unsigned int FamilyMoney = 100;
     unsigned int &MomMoney = FamilyMoney;
     unsigned int &FatherMoney = FamilyMoney;
     MomMoney -= 30;
-    std::cout << MomMoney << ', ' << FatherMoney; //70,70
+    std::cout << MomMoney << ', ' << FatherMoney; //70, 70
 ```
 
 ### Недостатъци на референцията
@@ -110,7 +110,7 @@ std::cout << &number << "\n";
 std::cout << ptr << "\n";
 ```
 
-Може да съдържа както адреса на някоя променлива, така и празното пространство (nullptr) или някоя непозволена памет (което е източник на грешки). <br /> 
+Може да съдържа както адреса на някоя променлива, така и нулев адрес (nullptr) или някоя непозволена памет (което е източник на грешки). <br /> з
 Адресът, който съдържа указателят, може да се променя. <br /> 
 Може да се извършват промени по данните в съответния адрес. <br /> 
 Указателят също притежава адрес. <br /> 
@@ -145,21 +145,21 @@ std::cout << ptr << "\n";
 ```
 
 ### Nullptr
-- pointer literal(поинтеров литерал)
-- Не може да се вземе адреса му с &
+- pointer literal(пойнтеров литерал).
+- Не може да се вземе адреса му с &.
 - nullptr сочи към адрес 0x00000000.
 
 ```c++
 // function with integer argument
 void fun(int N) 
 { 
-    cout << "fun(int)";
+    std::cout << "fun(int)\n";
 }
 
 // Overloaded function with char pointer argument
 void fun(char* s)
 {
-    cout << "fun(char *)";
+    std::cout << "fun(char*)\n";
 }
 
 int main()
@@ -177,7 +177,7 @@ int main()
 ![Pointer to const & const pointer](images/example1.png)
 
 Константните указатели са като референциите, но са указатели.
-Може да се променя стойността на променливата, но НЕ може да се промяня да сочи към друга променлива.
+Може да се променя стойността на променливата, но НЕ може да се променя да сочи към друга променлива.
 - int* const – константен указател
 
 ![Const pointer to const](images/example2.png)
