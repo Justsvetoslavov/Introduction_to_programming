@@ -22,7 +22,7 @@ void PrimeFactor(unsigned number)
 		if (IsPrime(i) && number % i == 0) {
 			if (i == number) { //last step, no space
 				std::cout << i;
-	        } else {
+			} else {
 				std::cout << i << " ";
 			}
 
