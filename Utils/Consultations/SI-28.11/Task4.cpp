@@ -1,13 +1,15 @@
 // Непозволен символ, който ще ползваме да знаем дали char има свой encoding
 const char INVALID_CHARACTER = '-';
+const unsigned int SPACE_INDEX = 26;
 
 const char LOWERCASE_A = 'a';
+const char LOWERCASE_Z = 'a';
 
 /*
 Помощна функция, която проверява дали даден символ е малка латинска буква
 */
 bool isLower(char ch) {
-	return 'a' <= ch && ch <= 'z';
+	return LOWERCASE_A <= ch && ch <= LOWERCASE_Z;
 }
 
 //Помощна функция, която запълва масив с определен символ
@@ -50,7 +52,7 @@ bool encodingExists(const char* from, const char* to, char* encoding) {
 		тъй като по условие низовете са само малки латински букви или празната клетка,
         	празната клетка е с фиксирана позиция 26-последната в масива arr 
 		*/
-		int encodingIndex = isLower(from[i]) ? from[i] - LOWERCASE_A : 26;
+		int encodingIndex = isLower(from[i]) ? from[i] - LOWERCASE_A : SPACE_INDEX;
 
 		/*
 		Ако на този символ от from няма кодиращ символ
@@ -96,7 +98,7 @@ void encode(const char* from, const char* to, const char* strToEncode, char* res
 		тъй като по условие низовете са само малки латински букви или празната клетка,
         	празната клетка е с фиксирана позиция 26-последната в масива arr 
 		*/
-		size_t encodingIndex = isLower(strToEncode[i]) ? strToEncode[i] - LOWERCASE_A : 26;
+		size_t encodingIndex = isLower(strToEncode[i]) ? strToEncode[i] - LOWERCASE_A : SPACE_INDEX;
 		
         	// за всеки character проверяваме дали има кодиране
        		// в encoding масива, ако не го оставяме същия
