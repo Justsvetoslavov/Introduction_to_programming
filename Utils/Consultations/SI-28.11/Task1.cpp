@@ -9,24 +9,26 @@ bool isSuffix(unsigned N, unsigned K) {
 		N /= 10;
 		K /= 10;
 	}
+	
 	return N != 0;
 }
 
 bool isConcat(unsigned N, unsigned K) {
-	//премахва последната цифра, защото ако краищата да съвпадат, числата не отговарят
-  //на условието
-  N /= 10;
+	//премахва последната цифра, защото ако краищата да съвпадат, числата не отговарят на условието
+	N /= 10;
+	
 	while (N != 0) {
 		if (isSuffix(N, K)) {
 			return true;
 		}
 		N /= 10;
 	}
+	
 	return false;
 }
 
 int main() {
-    std::cout << isConcat(1234, 23);
+	std::cout << isConcat(1234, 23);
 	std::cout << isConcat(1234, 234);
 	std::cout << isConcat(1234, 123);
 	std::cout << isConcat(12345, 2);
