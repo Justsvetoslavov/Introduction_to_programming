@@ -5,7 +5,7 @@
 - [Тема 7:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI/Sem.07) Референция. Указатели. Символни низове.
 
 ## Лектори
-- Георги Терзиев
 - Пламена Илиева
+- Георги Терзиев
 
 Проведена на: 28.11.2022г.
