@@ -8,3 +8,6 @@
 Вход: [1 2 3 2 1], Изход: true
 
 Вход: [1 1 2], Изход: true // 1 1 и 2
+
+Задача 4 : <br/>
+![image](https://user-images.githubusercontent.com/49128895/204383507-e84015c5-f159-4e48-895b-e0918d8a6f43.png)
