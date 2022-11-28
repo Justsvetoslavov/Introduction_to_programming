@@ -48,7 +48,7 @@ bool encodingExists(const char* from, const char* to, char* encoding) {
 		/*
 		Ако не е малка латинска буква, то тогава ще е празната клетка,
 		тъй като по условие низовете са само малки латински букви или празната клетка,
-        празната клетка е с фиксирана позиция 26-последната в масива arr 
+        	празната клетка е с фиксирана позиция 26-последната в масива arr 
 		*/
 		int encodingIndex = isLower(from[i]) ? from[i] - LOWERCASE_A : 26;
 
@@ -89,18 +89,18 @@ void encode(const char* from, const char* to, const char* strToEncode, char* res
 
 	size_t length = myStrLen(strToEncode);
 
-    // Обхождаме думата, която трябва да кодираме
+    	// Обхождаме думата, която трябва да кодираме
 	for (size_t i = 0; i < length; i++) {
 		/*
 		Ако не е малка латинска буква, то тогава ще е празната клетка,
 		тъй като по условие низовете са само малки латински букви или празната клетка,
-        празната клетка е с фиксирана позиция 26-последната в масива arr 
+        	празната клетка е с фиксирана позиция 26-последната в масива arr 
 		*/
 		size_t encodingIndex = isLower(strToEncode[i]) ? strToEncode[i] - LOWERCASE_A : 26;
 		
-        // за всеки character проверяваме дали има кодиране
-        // в encoding масива, ако не го оставяме същия
-        if (encoding[encodingIndex] != INVALID_CHARACTER) {
+        	// за всеки character проверяваме дали има кодиране
+       		// в encoding масива, ако не го оставяме същия
+        	if (encoding[encodingIndex] != INVALID_CHARACTER) {
 			result[i] = encoding[encodingIndex];
 		}
 		else {
@@ -108,7 +108,7 @@ void encode(const char* from, const char* to, const char* strToEncode, char* res
 		}
 	}
 
-    // Винаги поставяме терминираща нула на края, когато ние
-    // създаваме низа
+    	// Винаги поставяме терминираща нула на края, когато ние
+    	// създаваме низа
 	result[length] = '\0';
 }
