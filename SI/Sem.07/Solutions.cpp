@@ -24,6 +24,8 @@ int myStrCmp(const char* str1, const char* str2) {
     return str1[i] - str2[i] > 0 ? 1 : -1;
 }
 
+// Version 1
+// Concatenation done in additional array
 void myStrCat(const char* str1, const char* str2, char* result) {
     size_t str1Length = myStrLen(str1);
     size_t str2Length = myStrLen(str2);
@@ -39,6 +41,19 @@ void myStrCat(const char* str1, const char* str2, char* result) {
     result[str1Length + str2Length] = '\0';
 }
 
+// Version 2
+// Concatenation done in destination (as in stl strcat)
+void my_strcat(char* dest, const char* source)
+{
+	size_t destLength = myStrLen(dest);
+	size_t sourceLength = myStrLen(source);
+
+	for (size_t i = 0; i < sourceLength; i++) {
+		dest[destLength + i] = source[i];
+	}
+
+	dest[destLength + sourceLength] = '\0';
+}
 
 void myStrCopy(char* dest, const char* source) {
     size_t index = 0;
