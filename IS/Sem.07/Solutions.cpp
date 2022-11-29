@@ -40,14 +40,14 @@ void myStrCat(const char* str1, const char* str2, char* result) {
 }
 
 
-void myStrCopy(char* destination, const char* source) {
+void myStrCopy(char* dest, const char* source) {
     size_t index = 0;
     while (source[index] != '\0') {
-        destination[index] = source[index];
+        dest[index] = source[index];
         index++;
     }
 
-    destination[index] = '\0';
+    dest[index] = '\0';
 }
 
 bool isDigit(char symbol) {
