@@ -27,6 +27,29 @@ bool isValidNumber(const char* number) {
     return true;
 }
 
+// without strlen
+bool isValidNumberV2(const char* number) {
+    if (number[0] == '\0') {
+        return false;
+    }
+
+    if (number[0] == '-' && number[1] == '\0') {
+        return false;
+    }
+
+    size_t index = number[0] == '-' ? 1 : 0;
+
+    while (number[index] != '\0') {
+        if (!isDigit(number[index])) {
+            return false;
+        }
+
+        index++;
+    }
+
+    return true;
+}
+
 int myAtoi(const char* number) {
     if (!isValidNumber(number)) {
         return 0;
