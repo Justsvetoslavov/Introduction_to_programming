@@ -1,39 +1,44 @@
+//solution without counting each symbol
+
 #include <iostream>
 const int MAX_SIZE = 100;
+const int SIZE_SYMBOLS = 128;
 
-void FlipArr(char* arr, int start)
+//void CountSymbols(char* symbols, int* symbolsCount)
+//{
+//	for (int i = 0; i < MAX_SIZE; i++)
+//	{
+//		if (symbols[i] == '\0')
+//		{
+//			break;
+//		}
+//		symbolsCount[symbols[i]]++;
+//	}
+//}
+void PrintWithoutRepeating(char* str)
 {
-	for (int i = start; i < MAX_SIZE; i++)
-	{
-		if (arr[i] == '\0')
-		{
-			break;
-		}
-		arr[i] = arr[i + 1];
-	}
-}
+	int symbolsCount[SIZE_SYMBOLS] = {};
+	//CountSymbols(str, symbolsCount);
 
-void RemoveRepeating(char* str)
-{
+	char newStr[MAX_SIZE] = {};
+	int indexForNewStr = 0;
+
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
 		if (str[i] == '\0')
 		{
 			break;
 		}
-		for (int j = i + 1; j < MAX_SIZE; j++)
+		if (symbolsCount[str[i]] == -1)
 		{
-			if (str[j] == '\0')
-			{
-				break;
-			}
-			if (str[i] == str[j])
-			{
-				FlipArr(str, j);
-				j--;
-			}
+			continue;
 		}
+		newStr[indexForNewStr] = str[i];
+		symbolsCount[str[i]] = -1;
+		indexForNewStr++;
 	}
+
+	std::cout << newStr;
 }
 
 int main()
@@ -41,6 +46,5 @@ int main()
 	char str[MAX_SIZE];
 	std::cin >> str;
 
-	RemoveRepeating(str);
-	std::cout << str;
+	PrintWithoutRepeating(str);
 }
