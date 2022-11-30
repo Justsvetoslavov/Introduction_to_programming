@@ -30,7 +30,7 @@ void RemoveRepeating(char* str)
 			if (str[i] == str[j])
 			{
 				FlipArr(str, j);
-
+				j--;
 			}
 		}
 	}
