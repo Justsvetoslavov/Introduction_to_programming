@@ -20,7 +20,7 @@ void replaceSymbols(char* arr, char x, char a, char b)
 
 int main()
 {
-	char arr[] = "H_ll_ my fri_nd\0";
+	char arr[] = "H_ll_ my fri_nd";
 	replaceSymbols(arr, '_', 'e', 'o');
 
 	cout << arr;
