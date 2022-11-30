@@ -13,4 +13,6 @@ int main()
 	} else {
 		cout << "More than 200" << endl;
 	}
+
+	return 0;
 }

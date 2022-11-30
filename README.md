@@ -1,6 +1,5 @@
 ## Материали от семинарите и практикумите по "Увод в програмирането"
 #### зимен семестър 2022/2023, спец. Софтуерно инженерство & Информационни системи
-
 - [Материали спец. Софтуерно инженерство](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI)
 - [Материали спец. Информационни системи](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/IS)
 
@@ -13,7 +12,7 @@
 ## Github workflow
 
 0. Star the repository
-![star the repository](star-the-repo.png)
+![star the repo](images/star-the-repo.png)
 
 1. Fork the repository 
     - [How to fork a repository.](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
@@ -22,11 +21,12 @@
     - [How to clone a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
     - In GitHub desktop - Repository -> Repository settings... -> Fork behavior -> select To contribute to the parent repository
-    ![repo menu.](repository-settings-menu.png)
-    ![repo-settings.](repository-fork-settings.png)
+    ![repo menu](images/repository-settings-menu.png)
+    ![repo-settings](images/repository-fork-settings.png)
+
 
 3. Fetch origin
-    - ![fetch origin.](fetch-origin.png)
+    - ![fetch origin](images/fetch-origin.png)
 
 4. Create a branch 
     - You should create branch for each **3 tasks**.
