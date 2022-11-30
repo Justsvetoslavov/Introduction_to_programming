@@ -3,8 +3,7 @@
 int inverse(int a) {
 	int b = 0;
 	while (a != 0) {
-		b *= 10;
-		b += a % 10;
+		(b *= 10) += a % 10;
 		a /= 10;
 	}
 	return b;
@@ -12,8 +11,7 @@ int inverse(int a) {
 int generateLast(int& a, int k) {
 	int lastk = 0;
 	for (int i = 0; i < k; i++) {
-		lastk *= 10;
-		lastk += a % 10;
+		(lastk *= 10) += a % 10;
 		a /= 10;
 	}
 	lastk = inverse(lastk);
@@ -22,12 +20,12 @@ int generateLast(int& a, int k) {
 
 void concat(int a, int& b) {
 	int b1 = b;
-	int blen = 0;
+	int bLen = 0;
 	while (b != 0) {
-		blen++;
+		bLen++;
 		b /= 10;
 	}
-	for (int i = 0; i < blen; i++) {
+	for (int i = 0; i < bLen; i++) {
 		a *= 10;
 	}
 	b = a + b1;
