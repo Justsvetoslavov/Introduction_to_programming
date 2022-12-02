@@ -20,7 +20,7 @@ int main()
 {
 	char letter;
 	std::cin >> letter;
-	if (letter >= LOWER_CASE_UPPER_BORDER &&letter <= LOWER_CASE_LOWER_BORDER)//фукнция да си направя
+	if (letter >= LOWER_CASE_UPPER_BORDER &&letter <= LOWER_CASE_LOWER_BORDER)
 	{
 		toUpper(letter);
 	}
