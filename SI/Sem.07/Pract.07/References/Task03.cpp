@@ -2,38 +2,38 @@
 
 //задача. Да се напише функция *sort3(int& min, int& mid, int& max)*, която приема 3 числа и ги сортира във възходящ ред.
 //Вход: 4 5 3 | Изход : 3 4 5
-void sort3(int& min, int& mid, int& max)
+
+
+void sort3(int& a, int& b, int& c)
 {
-	if (min < mid && mid<max)
+	int tempA = a;
+	int tempB = b;
+	int tempC = c;
+	if (a > b)
 	{
-		std::cout << min << " " << mid << " " << max;
+		b = a;
+		a = tempB;
 	}
-	else if (min < max && max < mid)
+	else if (a > c)
 	{
-		std::cout << min << " " << max << " " << mid;
+		c = a;
+		a = tempC;
 	}
-	else if (mid < min && min < max)
+	else if (b > c)
 	{
-		std::cout << mid << " " << min << " " << max;
+		c = b;
+		b = tempC;
 	}
-	else if (mid < max && max < min)
-	{
-		std::cout << mid << " " << max << " " << min;
-	}
-	else if (max < min && min < mid)
-	{
-		std::cout << max << " " << min << " " << mid;
-	}
-	else if (max < mid && mid < min)
-	{
-		std::cout << max << " " << mid << " " << min;
-	}
+	
+	 
+	
 }
+
 int main()
 {
 	int a, b, c;
 	std::cin >> a >> b >> c;
 	sort3(a, b, c);
-
+	std::cout << a << " " << b << " " << c;
 	return 0;
 }
