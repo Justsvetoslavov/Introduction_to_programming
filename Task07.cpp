@@ -11,8 +11,14 @@ void calculateHours(int& hour, int& minute, int startHour, int startMinute, int 
         hour = startHour;
         minute = startMinute;
     }
-    else if(startHour == hour) {
-        if(startMinute > minute) minute = startMinute;
+    else if(startHour == hour && minute > startMinute) {
+        minute = startMinute;
+    }
+}
+
+void convertHoursToNormalTime(int& hours) {
+    while(hours >= 24) {
+        hours-= 24;
     }
 }
 
@@ -25,5 +31,6 @@ int main() {
         std::cin >> startingHour >> startingMinute >> duration;
         calculateHours(hour, minute, startingHour, startingMinute, duration);
     }
+    convertHoursToNormalTime(hour);
     std::cout << hour << " " << minute << std::endl;
 }
