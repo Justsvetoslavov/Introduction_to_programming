@@ -1,25 +1,25 @@
 #include <iostream>
 
-int inverse(int a) {
-	int b = 0;
-	while (a != 0) {
-		(b *= 10) += a % 10;
-		a /= 10;
+int inverse(int num) {
+	int inversedNum = 0;
+	while (num != 0) {
+		(inversedNum *= 10) += num % 10;
+		num /= 10;
 	}
-	return b;
+	return inversedNum;
 }
-int generateLast(int& a, int k) {
-	int lastk = 0;
-	for (int i = 0; i < k; i++) {
-		(lastk *= 10) += a % 10;
-		a /= 10;
+int generateLast(int& num, int suffixLen) {
+	int suffix = 0;
+	for (int i = 0; i < suffixLen; i++) {
+		(suffix *= 10) += num % 10;
+		num /= 10;
 	}
-	lastk = inverse(lastk);
-	return lastk;
+	suffix = inverse(suffix);
+	return suffix;
 }
 
 void concat(int a, int& b) {
-	int b1 = b;
+	int bCopy = b;
 	int bLen = 0;
 	while (b != 0) {
 		bLen++;
@@ -28,9 +28,9 @@ void concat(int a, int& b) {
 	for (int i = 0; i < bLen; i++) {
 		a *= 10;
 	}
-	b = a + b1;
+	b = a + bCopy;
 }
-int main(){
+int main() {
 	int a, b, k;
 	std::cin >> a >> b >> k;
 	int lastk = generateLast(a, k);
