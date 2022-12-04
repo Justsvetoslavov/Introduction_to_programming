@@ -50,11 +50,11 @@ int charToNumber(char c)
 	return -1; //error code
 }
 
-unsigned AnyBaseToDecimal(const char* arr, unsigned size, unsigned base)]
+unsigned AnyBaseToDecimal(const char* arr, unsigned size, unsigned base)
 {
 	unsigned result = 0, mult = 1;
 	for (int i = 0; i < size; i++) {
-		sum = charToNumber(input[n - i - 1]) * mult;
+		result = charToNumber(arr[n - i - 1]) * mult;
 		mult *= base;
 	}
 
