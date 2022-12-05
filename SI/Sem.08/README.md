@@ -21,7 +21,7 @@ int* hValue = new int; //hValue is allocated on the stack
 *hValue = 5; //dereference to give value to the Heap allocated int
 ```
 
-![Memory](Memory.png)
+![Memory](images/Memory.png)
 
 #### Оператор **new**
 - Връща указтел към началото на паметта
@@ -45,7 +45,7 @@ void f()
 }
 ```
 
-![Memory-Leak-example](exampleMemoryLeak.png)
+![Memory-Leak-example](images/exampleMemoryLeak.png)
 
 След приключването на функцията ще се изчисти паметта в стека, но НЕ и паметта в heap-а. <br />
 За това ние трябва ръчно да я маркираме като свободна. <br />
