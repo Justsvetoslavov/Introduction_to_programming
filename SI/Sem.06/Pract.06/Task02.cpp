@@ -1,5 +1,3 @@
-#include <iostream>
-
 int countOnes(int number) {
     int numberOfOnes = 0;
     while (number != 0) {
