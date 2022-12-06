@@ -7,8 +7,7 @@ int powerOfTwo(int exp)
 
 void getSubNumber(const int* arr, int size, int mask)
 {
-	for (int i = 0; i < size; i++)
-	{
+	for (int i = 0; i < size; i++) {
 		if (mask & 1) {
 			std::cout << arr[i] << " ";
 		}
