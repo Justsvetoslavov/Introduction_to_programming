@@ -6,32 +6,30 @@ void InitArray(bool* arr, unsigned size, bool value)
 {
 	for (unsigned i = 0; i < size; i++) {
 		arr[i] = value;
-    }
+	}
 }
 
 void EratosthenesSieve(bool* arr, unsigned size)
 {
 	arr[0] = arr[1] = false;
 
-	for (unsigned i = 2; i < sqrt(size); i++)
-	{
+	for (unsigned i = 2; i < sqrt(size); i++) {
 		if (!arr[i]) { //ако числото е задраскано
 			continue;
-        }
+		}
 		
 		for (unsigned j = i * i; j < size; j += i) {
 			arr[j] = false; //задраскваме
-        }
+		}
 	}
 }
 
 void PrintSieve(const bool* arr, unsigned size)
 {
-	for (unsigned i = 0; i < size; i++)
-	{
+	for (unsigned i = 0; i < size; i++) {
 		if (arr[i]) {
 			std::cout << i << " ";
-        }
+		}
 	}
 }
 
@@ -45,6 +43,6 @@ int main()
 	InitArray(buffer, n, true);
 	EratosthenesSieve(buffer, n);
 	PrintSieve(buffer, n);
-
-    return 0;
+	
+	return 0;
 }
