@@ -36,7 +36,6 @@ void convertToASystem(int number, int currentCode, int desiredCode, char* buffer
     int numberDecimal = convertToDecimal(number, currentCode);
     int lengthOfBuffer = convertFromDecimalAndGiveLength(numberDecimal, desiredCode, buffer);
     printNumbers(buffer, lengthOfBuffer);
-
 }
 
 int main()
