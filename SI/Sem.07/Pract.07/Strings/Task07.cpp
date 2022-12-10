@@ -1,19 +1,19 @@
 ﻿
 
 #include <iostream>
-const int SIZE = 50;
-int compareStrings(const char firstString[], const char secondString[])
+const int SIZE = 1024;
+int compareStrings(const char* firstString, const char* secondString)
 {
-	int index = 0;
-	while (firstString[index] == secondString[index]) 
+	size_t index = 0;
+	while (firstString[index] == secondString[index])
 	{
-		if (firstString[index] == '\0') 
+		if (firstString[index] == '\0')
 		{
 			return 0;
 		}
 		index++;
 	}
-	if (firstString[index + 1] - secondString[index + 1] < 0)
+	if (firstString[index] - secondString[index] < 0)
 	{
 		return -1;
 	}
@@ -27,4 +27,5 @@ int main()
 
 	std::cout << compareStrings(firstString, secondString);
 }
+
 
