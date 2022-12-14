@@ -26,9 +26,7 @@ bool GetInput(int movies[MAX_COUNT_ROWS][MAX_COUNT_COLS], int countRows)
 {
 	for (int i = 0; i < countRows; i++)
 	{
-		int hourBegin = 0;
-		int minutesBegin = 0;
-		int duration = 0;
+		int hourBegin, minutesBegin, duration;
 		std::cin >> hourBegin >> minutesBegin >> duration;
 		if (!CheckValidInput(hourBegin, minutesBegin, duration))
 		{
@@ -37,7 +35,7 @@ bool GetInput(int movies[MAX_COUNT_ROWS][MAX_COUNT_COLS], int countRows)
 		}
 		else
 		{
-			
+
 			movies[i][0] = hourBegin;
 			movies[i][1] = minutesBegin;
 			movies[i][2] = duration;
@@ -46,13 +44,9 @@ bool GetInput(int movies[MAX_COUNT_ROWS][MAX_COUNT_COLS], int countRows)
 	return true;
 }
 
-bool CheckValidInput(int hours, int minutes, int duration)
+inline bool CheckValidInput(int hours, int minutes, int duration)
 {
-	if (hours >= 0 && minutes >= 0 && duration >= 0)
-	{
-		return true;
-	}
-	return false;
+	return (hours >= 0 && minutes >= 0 && duration >= 0);
 }
 
 void FindEndTime(int movies[MAX_COUNT_ROWS][MAX_COUNT_COLS], int countRows)
@@ -63,11 +57,13 @@ void FindEndTime(int movies[MAX_COUNT_ROWS][MAX_COUNT_COLS], int countRows)
 	for (int i = 0; i < countRows; i++)
 	{
 		int duration = movies[i][2];
-		int hoursOfDuration = ConvertToMinutes(duration)[0];
-		int minutesOfDuration = ConvertToMinutes(duration)[1];
+		int* durationTmp = ConvertToMinutes(duration);
+		int hoursOfDuration = durationTmp[0];
+		int minutesOfDuration = durationTmp[1];
 
-		int endHour = SumTime(movies[i][0], movies[i][1], hoursOfDuration, minutesOfDuration)[0];
-		int endMinutes = SumTime(movies[i][0], movies[i][1], hoursOfDuration, minutesOfDuration)[1];
+		int* endTimeTmp = SumTime(movies[i][0], movies[i][1], hoursOfDuration, minutesOfDuration);
+		int endHour = endTimeTmp[0];
+		int endMinutes = endTimeTmp[1];
 
 		if (maxLatestHour < endHour || (maxLatestHour == endHour && maxLatestMinutes < endMinutes))
 		{
@@ -81,7 +77,7 @@ void FindEndTime(int movies[MAX_COUNT_ROWS][MAX_COUNT_COLS], int countRows)
 int* ConvertToMinutes(int duration)
 {
 	const int minuteInHour = 60;
-	int timeTmp[2];
+	int* timeTmp = new int[2];
 	int hours = duration / minuteInHour;
 	timeTmp[0] = hours;
 	duration -= hours * minuteInHour;
@@ -92,7 +88,7 @@ int* ConvertToMinutes(int duration)
 
 int* SumTime(int hoursBegin, int minutesBegin, int hoursDuration, int minutesDuration)
 {
-	int endTime[2];
+	int* endTime = new int[2];
 	int hoursEnd = hoursBegin + hoursDuration;
 	int minutesEnd = minutesBegin + minutesDuration;
 
@@ -105,7 +101,7 @@ void Print(int hoursEnd, int minutesEnd)
 {
 	if (hoursEnd >= 24)
 	{
-		hoursEnd -= (hoursEnd / 24) * 24;
+		hoursEnd -= hoursEnd % 24;
 	}
 	if (minutesEnd >= 60)
 	{
@@ -113,7 +109,7 @@ void Print(int hoursEnd, int minutesEnd)
 		minutesEnd -= hoursToAdd * 60;
 		hoursEnd += hoursToAdd;
 	}
-	if (minutesEnd <=9)
+	if (minutesEnd <= 9)
 	{
 		std::cout << hoursEnd << " 0" << minutesEnd;
 	}
