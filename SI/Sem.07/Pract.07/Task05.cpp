@@ -15,17 +15,10 @@ void fillDigitsOfNumInArr(int * arr, int len, int number){
         number /= 10;
     }
 }
-int myPowF(int num, int power){
-    int newNum = 1;
-    for(int i = 0; i < power; i++){
-       newNum *= num;
-    }
-    return newNum;
-}
 int fromArrOfDigitsToInt(const int * arr, int len){
     int resultNum = 0;
     for(int i = 0; i < len; i++){
-       resultNum += arr[i] * myPowF(10, len-1-i);
+       resultNum = arr[i] + resultNum * 10;
     }
     return resultNum;
 }
