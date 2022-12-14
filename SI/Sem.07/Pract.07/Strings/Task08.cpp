@@ -1,24 +1,10 @@
-//solution without counting each symbol
-
 #include <iostream>
 const int MAX_SIZE = 100;
 const int SIZE_SYMBOLS = 128;
 
-//void CountSymbols(char* symbols, int* symbolsCount)
-//{
-//	for (int i = 0; i < MAX_SIZE; i++)
-//	{
-//		if (symbols[i] == '\0')
-//		{
-//			break;
-//		}
-//		symbolsCount[symbols[i]]++;
-//	}
-//}
 void PrintWithoutRepeating(char* str)
 {
 	int symbolsCount[SIZE_SYMBOLS] = {};
-	//CountSymbols(str, symbolsCount);
 
 	char newStr[MAX_SIZE] = {};
 	int indexForNewStr = 0;
@@ -48,3 +34,4 @@ int main()
 
 	PrintWithoutRepeating(str);
 }
+
