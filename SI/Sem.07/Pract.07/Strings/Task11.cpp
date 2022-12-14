@@ -17,10 +17,10 @@ void Replace(char* str, int start, int end) {
         str[i] = '*';
     }
 }
-bool FindWord(char text[],char word[],int wordLength,int currentLetter) {
-    for (int j = 0; j < wordLength; j++)
+bool FindSubstring(char text[],char substring[],int substringLength,int currentLetter) {
+    for (int j = 0; j < substringLength; j++)
     {
-        int textDiferance = word[j] - text[currentLetter + j];
+        int textDiferance = substring[j] - text[currentLetter + j];
         if (textDiferance != 0 && textDiferance != UpperCaseDifferance && textDiferance != -UpperCaseDifferance)
         {
             return false;
@@ -28,28 +28,28 @@ bool FindWord(char text[],char word[],int wordLength,int currentLetter) {
     }
     return true;
 }
-void ReplacedWordsInText(char text[],char word[],int textLength,int wordLength) {
+void ReplacedSubstringInText(char text[],char substring[],int textLength,int substringLength) {
     for (int i = 0; i < textLength; i++)
     {
-        int textDiferance = text[i] - word[0];
+        int textDiferance = text[i] - substring[0];
         if (textDiferance == 0 || textDiferance == UpperCaseDifferance || textDiferance == -UpperCaseDifferance)
         {
-            if (FindWord(text,word,wordLength,i))
+            if (FindSubstring(text, substring, substringLength,i))
             {
-                Replace(text, i, i + wordLength);
-                i += wordLength - 1;
+                Replace(text, i, i + substringLength);
+                i += substringLength - 1;
             }
         }
     }
 }
 int main()
 {
-    char word[MaxLength];
+    char substring[MaxLength];
     char text[MaxLength];
     cin.getline(text, MaxLength);
-    cin.getline(word, MaxLength);
-    int wordLength = GetLenght(word);
+    cin.getline(substring, MaxLength);
+    int substringLength = GetLenght(substring);
     int textLength = GetLenght(text);
-    ReplacedWordsInText(text,word,textLength,wordLength);
+    ReplacedSubstringInText(text, substring,textLength, substringLength);
     cout << text;
 }
