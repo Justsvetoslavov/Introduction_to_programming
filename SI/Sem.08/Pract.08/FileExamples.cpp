@@ -7,6 +7,7 @@ const char FILE_NAME[] = "PractFiles.cpp";
 
 const int BUFFER_SIZE = 1024;
 
+// read the source code from your cpp and print in console
 int main() {
 	std::ifstream in(FILE_NAME);
 
