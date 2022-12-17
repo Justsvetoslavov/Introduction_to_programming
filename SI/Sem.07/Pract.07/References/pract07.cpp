@@ -1,11 +1,6 @@
-#include <iostream>
-using namespace std;
-
 void swap(int& a, int& b) 
 {
-    int c = a;
+    int temp = a;
     a = b;
-    b = c;
-   
-    cout << a << b;
+    b = temp;
 }
