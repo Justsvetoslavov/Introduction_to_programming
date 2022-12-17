@@ -1,12 +1,9 @@
-#include <iostream>
-using namespace std;
-
-void toUpper(char& letter) 
+void ToUpper(char& letter) 
 {
 	letter -= 'a' - 'A';
 }
 
-void toLower(char& letter)
+void ToLower(char& letter)
 {
 	letter += 'a' - 'A';
 }
