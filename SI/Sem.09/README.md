@@ -171,7 +171,7 @@ int main()
 
 ![Head-recursion](images/Head-recursion.jpg)
 
-- **Linear** vs **Tree*
+- **Linear** vs **Tree**
     - **Linear** - ако в тялото на функцията, тя се извиква само веднъж.
     - **Tree** - ако в тялото на функцията, тя се извиква повече от веднъж.
 
