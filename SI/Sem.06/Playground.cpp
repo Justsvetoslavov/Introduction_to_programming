@@ -158,10 +158,10 @@ int main()
         print_character_before_after_bitwise(c, c_bitwise_not);
 
         c_bitwise_not = ~c2;
-        print_character_before_after_bitwise(c, c_bitwise_not);
+        print_character_before_after_bitwise(c2, c_bitwise_not);
 
         c_bitwise_not = ~c3;
-        print_character_before_after_bitwise(c, c_bitwise_not);
+        print_character_before_after_bitwise(c3, c_bitwise_not);
     }
 
     return 0;
