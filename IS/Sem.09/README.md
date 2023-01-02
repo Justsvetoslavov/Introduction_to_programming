@@ -5,7 +5,7 @@
 Един обект наричаме **рекурсивен**, ако съдържа **себе си** или е **дефиниран чрез себе си**. <br />
 Рекурсията е програмна техника, чиято правилна употреба води до елегантни решения на определени проблеми. Понякога нейното използване може да опрости значително кода и да подобри четимостта му. <br />
 
-![Recursion-simpons](images/Recursion-simpsons.gif)
+![Recursion-simpons](../../SI/Sem.09/images/Recursion-simpsons.gif)
 
 ### **Предназначение**
 Рекурсията се прави за решаване на проблеми, които могат да бъдат разделени на по-малки, повтарящи се проблеми. <br />
@@ -23,7 +23,7 @@ int sumRange(int num)
 }
 ```
 
-![SumRange-explained](images/SumRange.gif)
+![SumRange-explained](../../SI/Sem.09/images/SumRange.gif)
 
 ### **Дъно на рекурсия**
 Реализирайки рекурсия, трябва да сме сигурни, че **след краен брой стъпки ще получим конкретен резултат**. <br />
@@ -52,7 +52,7 @@ int main()
 Ако n е произволно естествено число, следната дефиниция на функцията факториел е рекурсивна. <br />
 Условието при n = 0 **НЕ** съдържа обръщение към функцията факториел и се нарича **гранично**. <br />
 
-![Factorial-Definition](images/factorial-formula.png)
+![Factorial-Definition](../../SI/Sem.09/images/factorial-formula.png)
 
 ```c++
 // В тази програма е описана рекурсивната функция fact,
@@ -75,7 +75,7 @@ int fact(const int n)
 ### **Примерна програма - gcd**
 Да се напише рекурсивна функция, която намира най-големия общ делител на две естествени числа. <br />
 
-![Gcd-Definition](images/gcd-definition.png)
+![Gcd-Definition](../../SI/Sem.09/images/gcd-definition.png)
 
 В случая a = b играе ролята на **гранично условие**, защото не съдържа обръщение към функцията gcd(Greatest common divisor) и чрез него се достига "дъното". <br />
 
@@ -97,7 +97,7 @@ int gcd(const int a, const int b)
 
 Напишете програма, която въвежда цяло число n и пресмята n-тото число на Фибоначи.
 
-![Fibonacci-Definition](images/fib.png)
+![Fibonacci-Definition](../../SI/Sem.09/images/fib.png)
 
 ```c++
 int fibonacci(unsigned int n)
@@ -147,7 +147,7 @@ int main()
 }
 ```
 
-![Tail-recursion](images/Tail-recursion.jpg)
+![Tail-recursion](../../SI/Sem.09/images/Tail-recursion.jpg)
 
 - **Head** - ако рекурсивното извикване е първата команда/израз.
 
@@ -169,9 +169,9 @@ int main()
 }
 ```
 
-![Head-recursion](images/Head-recursion.jpg)
+![Head-recursion](../../SI/Sem.09/images/Head-recursion.jpg)
 
-- **Linear** vs **Tree*
+- **Linear** vs **Tree**
     - **Linear** - ако в тялото на функцията, тя се извиква само веднъж.
     - **Tree** - ако в тялото на функцията, тя се извиква повече от веднъж.
 
@@ -199,7 +199,7 @@ int main()
 }
 ```
 
-![Tree-recursion](images/Tree-recursion.jpg)
+![Tree-recursion](../../SI/Sem.09/images/Tree-recursion.jpg)
 
 - **Nested** - рекурсия в рекурсията. Когато се подаде рекурсия като параметър.
 
@@ -225,8 +225,7 @@ int main()
 }
 ```
 
-![Nested-recursion](images/Nested-recursion.jpg)
-
+![Nested-recursion](../../SI/Sem.09/images/Nested-recursion.jpg)
 
 Ако метод A се обръща към метод B, B към C, а С отново към А, казваме, че методът А, както и методите В и C са **непряко (косвено) рекурсивни** или **взаимно-рекурсивни**. <br />
 Веригата от извиквания при косвената рекурсия може да съдържа множество методи, както и разклонения, т.е. при наличие на едно условие да се извиква един метод, а при различно условие да се извиква друг. <br />
@@ -251,7 +250,7 @@ void indirectRecFun3()
 }
 ```
 
-![Direct-Indirect-Recursion](images/Indirect-direct-recursion.png)
+![Direct-Indirect-Recursion](../../SI/Sem.09/images/Indirect-direct-recursion.png)
 
 
 ### **Рекурсия vs Цикли**
