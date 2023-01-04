@@ -1,26 +1,13 @@
-﻿#include <iostream>
-
-long long toPow(int number, int pow)
+unsigned power(unsigned x, unsigned n)
 {
-	if (pow == 0) 
-	{
+	if (n == 0) {
 		return 1;
 	}
 
-	if (pow % 2 == 0)
-	{
-		long long current = toPow(number, pow / 2);
-		return current * current;
+	if (n % 2 == 1) {
+		return x * power(x, n - 1);
 	}
-	else
-	{
-		return number * toPow(number, pow - 1);
-	}
+	
+	unsigned temp = power(x, n / 2);
+	return temp * temp;
 }
-int main()
-{
-	std::cout << toPow(2, 3);
-	return 0;
-}
-
-
