@@ -1,24 +1,32 @@
-﻿#include <iostream>
-const int MAX_SIZE = 20;
-void addElement(int* array, int toAdd, int len)
+void Resize(int*& array, int& arraySize, int element, int index) 
 {
-	if (len == 0 || toAdd > array[len - 1])
-	{
-		array[len] = toAdd;
-		return;
+	int* newArray = new int[++arraySize];
+	
+	for (size_t i = 0; i < index; i++) {
+		newArray[i] = array[i];
 	}
-	array[len] = array[len - 1];
-	addElement(array, toAdd, len - 1);
+ 
+   	newArray[index] = element;
+ 
+    	for (size_t i = index + 1; i < arraySize; i++) {
+        	newArray[i] = array[i - 1];
+    	}
+ 
+    	delete[] array;
+   	array = newArray;
 }
-
-int main()
+ 
+void AddElement(int*& array, int& arraySize, int element, int index = 0)
 {
-	int arr[MAX_SIZE] = { 1,2,3,4,5,7,8,9,10 };
-	int toAdd = 6;
-	addElement(arr, toAdd, 8);
-	for (int i = 0; i < 10; i++)
-	{
-		std::cout << arr[i] << " ";
-	}
-	return 0;
+	if (arraySize == 0 || element >= array[arraySize - 1]) {
+        	Resize(array, arraySize, element, arraySize);
+        	return;
+    	}
+ 
+    	if (element < array[index]) {
+        	Resize(array, arraySize, element, index);
+        	return;
+    	}
+ 
+    	AddElement(array, arraySize, element, index + 1);
 }
