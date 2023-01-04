@@ -2,13 +2,11 @@
 
 int** createMatrix(int row , int col)
 {
-	int** result = new int* [row];
+	int** result = new int*[row];
 
-	for (int i = 0; i < row; i++)
-	{
+	for (int i = 0; i < row; i++) {
 		result[i] = new int[col];
 	}
-
 
 	return result;
 }
@@ -16,10 +14,8 @@ int** createMatrix(int row , int col)
 
 void inputMatrix(int** arr, int row, int col)
 {
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
+	for (size_t i = 0; i < row; i++) {
+		for (size_t j = 0; j < col; j++) {
 			std::cin >> arr[i][j];
 		}
 	}
@@ -27,12 +23,9 @@ void inputMatrix(int** arr, int row, int col)
 
 bool isEqual(int** arr1, int** arr2, int row, int col)
 {
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			if (arr1[i][j] != arr2[i][j])
-			{
+	for (size_t i = 0; i < row; i++) {
+		for (size_t j = 0; j < col; j++) {
+			if (arr1[i][j] != arr2[i][j]) {
 				return false;
 			}
 		}
@@ -42,8 +35,7 @@ bool isEqual(int** arr1, int** arr2, int row, int col)
 
 void freeMemory(int** arr, int row)
 {
-	for (int i = 0; i < row; i++)
-	{
+	for (size_t i = 0; i < row; i++) {
 		delete[] arr[i];
 	}
 
