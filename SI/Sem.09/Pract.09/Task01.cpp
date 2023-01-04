@@ -1,31 +1,10 @@
-﻿#include <iostream>
-
-bool isPresent(int n, int k)
+bool Exist_digit(unsigned int val, unsigned int digit)
 {
-	if (n == 0)
-	{
-		return false;
-	}
+        if (val == 0)
+			return false;
+		
+        if (val % 10 == digit)
+            return true;
 
-	if (n % 10 == k)
-	{
-		return true;
-	}
-
-	return isPresent(n / 10, k);
-
-}
-int main()
-{
-	int number, targetDigit;
-	std::cin >> number >> targetDigit;
-	if (isPresent(number, targetDigit))
-	{
-		std::cout << "It is present.";
-	}
-	else
-	{
-		std::cout << "It is not present.";
-	}
-	return 0;
+        return Exist_digit(val / 10, digit)
 }
