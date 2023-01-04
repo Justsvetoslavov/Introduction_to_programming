@@ -1,6 +1,5 @@
 bool isPalindrome(const char* array, int leftIndx, int rightIndx)
 {
-
 	if (leftIndx >= rightIndx) {
 		return true;
 	}
