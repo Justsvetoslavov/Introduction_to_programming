@@ -6,19 +6,19 @@
 // => we have to calculate fact(0) so we return 1
 // but N * 1 is actually 0 * 1, because N is already decremented
 size_t fact(size_t N) {
-	if (N == 0) { 
-		return 1;
+    if (N == 0) { 
+	return 1;
     }
 
-	return N * fact(--N);
+    return N * fact(--N);
 }
 
 // Infinite loop - we will always call fact with N
 // Because N-- decrements the number after we use it
 size_t fact(size_t N) {
-	if (N == 0) { 
-		return 1;
+    if (N == 0) { 
+	return 1;
     }
 
-	return N * fact(N--);
+    return N * fact(N--);
 }
