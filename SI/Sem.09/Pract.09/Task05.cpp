@@ -1,13 +1,8 @@
-bool isPalindrome(const char* array, int leftIndx, int rightIndx)
-{
-	if (leftIndx >= rightIndx) {
-		return true;
-	}
+#include <iostream>
 
-	if (array[leftIndx] != array[rightIndx]) {
-		return false;
-	}
+bool isPalindrome(char* arr, int len) {
+    if (len <= 0) return true;
+    if (arr[0] != arr[len - 1]) return false;
 
-	return isPalindrome(array, leftIndx + 1, rightIndx - 1);
+    return isPalindrome(arr + 1, len - 2);
 }
-
