@@ -147,3 +147,15 @@ int main()
 }
 ```
 
+### Benefits of Function Pointer in C++
+- A function pointer can be passed as a parameter to a function, thus providing the functionality of implementing callback functions.
+- A function pointers allows you to send along instructions for how to perform something.
+- By supplying function pointers as parameters, you may construct flexible functions and libraries that allow the programmer to determine behavior.
+
+### Conclusion
+- Just like variables, functions also have pointers to them, that stores the address which points to the first instruction of the function in C++.
+- The address of a function can be accessed by just writing the function name without the brackets.
+- Callback functions are functions that are executed when a particular event takes place. This can be achieved by using a function pointer.
+- A function pointer cannot be used to allocate or deallocate memory as they point to the address of the code.
+- We can also call a function indirectly with the help of a pointer ( function pointer ) by using the name of the function pointer in C++.
+- A function pointer can also be used as a return type or as an argument to another function.
