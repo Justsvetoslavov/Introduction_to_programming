@@ -1,5 +1,9 @@
 ## Указатели към функции
 
+Указателят към функция има за стойност адреса на изпълнимия код на дадена функция. <br />
+Указателите към функции могат да се използват, за да се извикват функции и да се подават функции като параметри на други функции(функции от по-висок ред). <br />
+Не може да се извършва указателна аритметика върху указатели към функции. <br />
+
 ![Function-pointer-declaration](img/Function-pointer-declaration.png)
 
 #### Пример чрез print function
@@ -92,6 +96,8 @@ int main()
 }
 ```
 
+**Оператор typedef** - чрез него може да задаваме имена (синоними) на типове.
+
 #### Function pointer as parameter
 
 ```c++
@@ -146,6 +152,7 @@ int main()
     return 0;
 }
 ```
+## ТБА - in progress
 
 ### Benefits of Function Pointer in C++
 - A function pointer can be passed as a parameter to a function, thus providing the functionality of implementing callback functions.
@@ -159,3 +166,6 @@ int main()
 - A function pointer cannot be used to allocate or deallocate memory as they point to the address of the code.
 - We can also call a function indirectly with the help of a pointer ( function pointer ) by using the name of the function pointer in C++.
 - A function pointer can also be used as a return type or as an argument to another function.
+
+## Lambda functions
+Т.нар анонимни функции - дефинират се еднократно на мястото, на което се използват (извикват или подават като параметър на функция). <br />
