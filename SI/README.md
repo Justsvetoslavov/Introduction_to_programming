@@ -10,3 +10,4 @@
 - [Тема 7:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI/Sem.07) Референция. Указатели. Символни низове.
 - [Тема 8:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI/Sem.08) Динамична памет.
 - [Тема 9:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI/Sem.09) Рекурсия.
+- [Тема 10:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI/Sem.10) Функции от по-висок ред.
