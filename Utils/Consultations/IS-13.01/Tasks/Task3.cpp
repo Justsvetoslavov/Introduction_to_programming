@@ -52,8 +52,7 @@ int GetMinOp(int n) {
 	return result;
 }
 
-//function without cache
-/*int GetMinOp(int n) {
+int GetMinOpNoCache(int n) {
 	if (n == 1) 
 	{
 		return 0;
@@ -76,7 +75,7 @@ int GetMinOp(int n) {
 	int result = min(div3, div2, s1) + 1;
 	
 	return result;
-}*/
+}
 
 int main()
 {
