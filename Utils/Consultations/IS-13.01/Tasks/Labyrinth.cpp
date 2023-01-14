@@ -7,6 +7,7 @@ bool isValidPosition(int i, int j) {
 	return 0 <= i && i < MAX_SIZE && 0 <= j && j < MAX_SIZE;
 }
 
+// Implementing a backtracking solution
 // currentI, currentJ - our current position
 // destinationI, destinationJ - where we want to reach
 bool hasPath(
