@@ -80,5 +80,5 @@ int GetMinOp(int n) {
 
 int main()
 {
-	std::cout << getMinOp(19); //4
+	std::cout << GetMinOp(19); //4
 }
