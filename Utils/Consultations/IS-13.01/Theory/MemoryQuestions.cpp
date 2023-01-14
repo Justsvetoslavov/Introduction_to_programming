@@ -3,21 +3,21 @@
 int q1() {
 	// How much memory is allocated in the following expressions and where?
 	// we assume that the pointer takes 4 bytes
-	short s = 1;				// Stack:	2	Heap:
-	int a = 2;					// Stack:	4	Heap:
-	bool b = true;				// Stack:	1	Heap:
+	short s = 1;				// Stack:	2	Heap:	0
+	int a = 2;				// Stack:	4	Heap:	0
+	bool b = true;				// Stack:	1	Heap:	0
 	bool* p = new bool;			// Stack:	4	Heap:   1
-	char c = '\0';				// Stack:	1	Heap:
-	double d = 11.1;			// Stack:	8	Heap:
-	int arr1[40] = { 0 };		// Stack: 164	Heap:
+	char c = '\0';				// Stack:	1	Heap:	0
+	double d = 11.1;			// Stack:	8	Heap:	0
+	int arr1[40] = { 0 };			// Stack:	164	Heap:	0
 	// arr1 is a static array => it allocates one pointer and 40 * 4 int
-	int* arr2 = new int(40);	// Stack:	4	Heap:   4
-	int* arr3 = new int[40];	// Stack:	4	Heap: 160
-	char test[] = "abcd";		// Stack:	9	Heap:
-
-	int** matrix = new int*[10];  // Stack: 4  Heap: 10 * 4
+	
+	int* arr2 = new int(40);		// Stack:	4	Heap:   4
+	int* arr3 = new int[40];		// Stack:	4	Heap:	160
+	char test[] = "abcd";			// Stack:	9	Heap:	0
+	int** matrix = new int*[10];  		// Stack:	4  	Heap:	10 * 4
 	for (size_t i = 1; i < 10; i++) {
-		matrix[i] = new int[i]; // new int[i]
+		matrix[i] = new int[i]; // new int(i) vs new int[i]
 	}
 	// new int(i)
 	// Stack:  4    Heap: 10 * 4 + 9 * 4
