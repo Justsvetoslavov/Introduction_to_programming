@@ -3,7 +3,7 @@
 const int MAX_SIZE = 5;
 
 // is in matrix
-bool isValid(int i, int j) {
+bool isValidPosition(int i, int j) {
 	return 0 <= i && i < MAX_SIZE && 0 <= j && j < MAX_SIZE;
 }
 
