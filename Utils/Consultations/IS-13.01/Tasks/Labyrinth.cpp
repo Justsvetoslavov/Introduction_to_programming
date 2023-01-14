@@ -17,7 +17,7 @@ bool hasPath(
 	int destinationJ
 ) {
     // if position is not in matrix - return false
-	if (!isValid(currentI, currentJ)) {
+	if (!isValidPosition(currentI, currentJ)) {
 		return false;
 	}
 
