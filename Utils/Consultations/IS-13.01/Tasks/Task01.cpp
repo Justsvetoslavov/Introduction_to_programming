@@ -32,7 +32,7 @@ bool hasPath(
 		return true;
 	}
 	
-    // mark current position as part of our part
+    // mark current position as part of our path
 	matrix[currentI][currentJ] = 2;
 
     // get the result from the surrounding squares
