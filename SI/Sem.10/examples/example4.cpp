@@ -1,59 +1,43 @@
 #include <iostream>
-using namespace std;
 
-bool isCapital(char ch)
-{
-    return ch >= 'A' && ch <= 'Z';
+typedef int num;
+
+typedef num (*next) (num);
+
+int increment1(int n) {
+	return n + 1;
 }
 
-bool isLower(char ch)
-{
-    return ch >= 'a' && ch <= 'z';
+int multiply2(int n) {
+	return n * 2;
 }
 
-bool isDigit(char ch)
-{
-    return ch >= '0' && ch <= '9';
+double sumFunc(int n, double (*func) (double), next nextI) {
+	double sum = 0;
+	for (int i = 1; i <= n; i = nextI(i)) {
+		sum += func(i);
+	}
+	return sum;
 }
 
-unsigned getCharCountCondition(const char* str, bool (*pred)(char))
-{
-    int count = 0;
-    while(*str)
-    {
-        if(pred(*str))
-            count++;
-        str++;
-    }
-    return count;
-}
+int main() {
 
-unsigned getLowerCount(const char* str)
-{
-    return getCharCountCondition(str, isLower);
-}
+	num i = 1;
 
+	// example for lambda
+	std::cout << sumFunc(16, sqrt, [](int n) { return n + 1; }) << std::endl;
+	
+	std::cout << sumFunc(16, sqrt, multiply2) << std::endl;
+	std::cout << sumFunc(16, sin, multiply2) << std::endl;
 
-unsigned getCapitalCount(const char* str)
-{
-    return getCharCountCondition(str, isCapital);
-}
+	int (*funcPointer) (int) = increment1;
 
-unsigned getDigitsCount(const char* str)
-{
-    return getCharCountCondition(str, isDigit);
-}
+	std::cout << increment1(4) << std::endl;
+	std::cout << funcPointer(4) << std::endl;
+	std::cout << (*funcPointer)(4) << std::endl;
 
-unsigned getWhitespacesCount(const char* str)
-{
-    return getCharCountCondition(str, [](char ch)  {return ch == ' ';} );
-}
+	std::cout << *(*funcPointer) << std::endl;
+	std::cout << *funcPointer << std::endl;
 
-int main()
-{
-    char str[] = "Hello World";
-    
-    cout << getWhitespacesCount(str);
-
-    return 0;
+	return 0;
 }
