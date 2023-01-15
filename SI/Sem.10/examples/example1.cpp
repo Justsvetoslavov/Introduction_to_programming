@@ -1,3 +1,5 @@
+//Credits for example to Angel Dimitriev
+
 #include <iostream>
 
 int get_something_from_array(const int* arr, size_t size, int result, int (*func)(int,int) )

@@ -1,17 +1,44 @@
 #include <iostream>
 
-int main()
-{
-    int i = 4;
+typedef int num;
 
-    [=]() mutable { // here *mutable* is needed to allow the captured-by-value variable to be changed inside the lambda
-        i++;
-        std::cout << "Inside first lambda: " << i << std::endl;
-    } (); // don't forget the brackets in order to call the function!
-    std::cout << "After first lambda: " << i << std::endl; // however, i is not changed after the scope of the lambda
+typedef num (*next) (num);
 
-    [&] { i++; } ();
-    std::cout << "After second lambda: " << i << std::endl;
+int increment1(int n) {
+	return n + 1;
+}
+// Credits for example to Elena Tuparova
 
-    return 0;
+int multiply2(int n) {
+	return n * 2;
+}
+
+double sumFunc(int n, double (*func) (double), next nextI) {
+	double sum = 0;
+	for (int i = 1; i <= n; i = nextI(i)) {
+		sum += func(i);
+	}
+	return sum;
+}
+
+int main() {
+
+	num i = 1;
+
+	// example for lambda
+	std::cout << sumFunc(16, sqrt, [](int n) { return n + 1; }) << std::endl;
+	
+	std::cout << sumFunc(16, sqrt, multiply2) << std::endl;
+	std::cout << sumFunc(16, sin, multiply2) << std::endl;
+
+	int (*funcPointer) (int) = increment1;
+
+	std::cout << increment1(4) << std::endl;
+	std::cout << funcPointer(4) << std::endl;
+	std::cout << (*funcPointer)(4) << std::endl;
+
+	std::cout << *(*funcPointer) << std::endl;
+	std::cout << *funcPointer << std::endl;
+
+	return 0;
 }
