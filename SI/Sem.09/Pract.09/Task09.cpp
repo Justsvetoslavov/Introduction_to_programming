@@ -16,7 +16,7 @@ int printNLeapYears(int N, int yearNow) {
 int main() {
 	int N = 0;
 	std::cin >> N;
-	int errorInput = printNLeapYears(N, 2000);
+	int errorInput = printNLeapYears(N, N);
 	if (errorInput == -1) {
 		std::cout << "Invalid input" << std::endl;
 	}
