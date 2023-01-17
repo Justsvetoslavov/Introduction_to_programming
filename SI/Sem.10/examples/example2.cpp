@@ -1,4 +1,4 @@
-////Credits for example to Angel Dimitriev
+//Credits for example to Angel Dimitriev
 
 #include <iostream>
 using namespace std;
