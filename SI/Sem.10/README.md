@@ -1,4 +1,4 @@
-## Указатели към функции
+## **Указатели към функции**
 
 Указателят към функция има за стойност адреса на изпълнимия код на дадена функция. <br />
 Указателите към функции могат да се използват, за да се извикват функции и да се подават функции като параметри на други функции(функции от по-висок ред). <br />
@@ -6,7 +6,7 @@
 
 ![Function-pointer-declaration](img/Function-pointer-declaration.png)
 
-#### Пример чрез print function
+#### **Пример чрез print function**
 ```c++
 #include <iostream>
 
@@ -29,7 +29,7 @@ int main()
 
 **Keyword: auto** - декларира променлива, чийто тип се извежда от израза за инициализация в нейната декларация. <br />
 
-#### Пример чрез функция с параметри
+#### **Пример чрез функция с параметри**
 ```c++
 #include <iostream>
 
@@ -56,10 +56,10 @@ int main()
 
 ## **Функции от по-висок ред/High order functions**
 
-### Дефиниция
+### **Дефиниция**
 Функция от по-висок ред ще наричаме функция, която приема друга функция като аргумент или връща функция като резултат.
 
-#### Function Pointer as Return Type
+#### **Function Pointer as Return Type**
 
 ```c++
 #include <iostream>
@@ -101,7 +101,7 @@ int main()
 **Оператор typedef** - чрез него може да задаваме имена (синоними) на типове. ( oт C ) <br />
 **Оператор using** - чрез него може да задаваме имена (синоними) на типове. ( от C++11 ) <br />
 
-#### Function pointer as parameter
+#### **Function pointer as parameter**
 
 ```c++
 void Function( return_type_of_pointer (*pointer_name)(data_type1, data_type2. . .) )
@@ -155,12 +155,12 @@ int main()
 }
 ```
 
-### Предимства
+### **Предимства**
 - Указател към функция може да бъде подаден като параметър на функция, като по този начин осигурява функционалността за прилагане на функции за обратно извикване(callback function).
 - Указател към функция позволява да се изпращат инструкции как да се изпълни нещо.
 - Като се предоставят указатели на функции като параметри, може да се конструират гъвкави функции и библиотеки, които позволяват на програмиста да определя конкретното поведението.
 
-### Заключение
+### **Заключение**
 - Just like variables, functions also have pointers to them, that stores the address which points to the first instruction of the function in C++.
 - The address of a function can be accessed by just writing the function name without the brackets.
 - Callback functions are functions that are executed when a particular event takes place. This can be achieved by using a function pointer.
@@ -171,4 +171,31 @@ int main()
 ## [Lambda functions](https://en.cppreference.com/w/cpp/language/lambda)
 Т.нар анонимни функции - дефинират се еднократно на мястото, на което се използват (извикват или подават като параметър на функция). <br />
 
+#### **Syntax**
+![Lambda-syntax](img/Lambda-syntax.png)
+![Lambda-extended-syntax](img/lambda-extended-syntax.gif)
 
+#### **By-reference capture**
+```c++
+void f(int i)
+{
+    [&]{};          // OK: by-reference capture default
+    [&, i]{};       // OK: by-reference capture, except i is captured by copy
+
+    [&, &i] {};     // Error: by-reference capture when by-reference is the default
+```
+
+#### **By-copy capture**
+
+```c++
+void f(int i)
+{
+    [=]{};        // OK: by-copy capture default
+    [=, &i]{};    // OK: by-copy capture, except i is captured by reference
+
+    [i, i] {};          // Error: i repeated
+    [i] (int i) {};     // Error: parameter and capture have the same name
+}
+```
+
+**[Допълнително информация: Статия за предимства на Lambda функция в С++.](https://www.cppstories.com/2020/05/lambdasadvantages.html/)**
