@@ -13,7 +13,7 @@ void printSourceCode() {
 
 	if (!in.is_open()) {
 		std::cout << "Error";
-		return -1;
+		return;
 	}
 	
 	while (!in.eof()) {
