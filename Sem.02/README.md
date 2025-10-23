@@ -31,7 +31,6 @@ else //не е задължителен компонент
 }
 ```
 ### if - else if - else
-
 ```c++
 if(<condition1>)
 {
@@ -53,6 +52,10 @@ else //не е задължителен компонент
 		//изпълнява се, ако всички горни условия са лъжа. 
 }
 ```
+
+<p align="left">
+  <img src="images/if-else-diagram.png">
+</p>
 
 ### Switch statement
 
@@ -88,15 +91,24 @@ switch(<целочислена променлива>)
 }
 ```
 
+<p align="left">
+  <img src="images/switch-case.png">
+</p>
+
 ### Тернарен оператор
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div style="flex: 1; padding-right: 20px;">
 
 ```c++
 <условие> ? <израз1> : <израз2>
 ```
 - Ако условието е истина, се връща оценката на израз1.
 - Ако е лъжа, то се връща оценката на израз2.
-
-![Ternary operator](https://static.javatpoint.com/cpages/images/conditional-operator-in-c.png)
+</div>
+<div style="flex: 1;">
+<img src="images/Ternary-operator.jpg" style="max-width: 100%; height: auto;">
+</div>
+</div>
 
 ## Задачи
 
