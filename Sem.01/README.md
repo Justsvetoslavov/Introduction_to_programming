@@ -15,9 +15,10 @@
 - Input stream - Ако посоката на потока от байтове е от устройството (например клавиатура) към главната памет, тогава този процес се нарича вход.
 - Output stream - Ако посоката на потока от байтове е обратното, т.е. от главната памет към устройството (например екран), тогава този процес се нарича изход.
 
-<p align="center">
-  <img width="460" height="300" src="https://www.cs.mtsu.edu/~xyang/images/cincout.png">
-</p>
+<div style="display: flex; justify-content: space-between;">
+<img src="images/Basic-input-output-01.png" width="50%">
+<img src="images/Basic-input-output-02.png" width="50%">
+</div>
 
 ## Променливи 
 
@@ -121,6 +122,6 @@ int a = PI; //3
 - Позиция на оператора спрямо аргумента - префиксен, инфиксен и суфиксен. <br />
 Таблица с всички оператори в c++:
 
-<p align="center">
-  <img src="https://camo.githubusercontent.com/21f088fc65ef9dd29585506b247898551d077c37e547c8adf5dad6f164b78084/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f75337132452e706e67">
+<p align="left">
+  <img src="images/CPP-Operator-Table.png">
 </p>
