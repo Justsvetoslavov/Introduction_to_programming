@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 	double number1, number2;
 
 	std::cout << "Enter first number value: ";
@@ -8,7 +9,8 @@ int main() {
 	std::cout << "Enter second number value: ";
 	std::cin >> number2;
 
-	if (number1 == number2) {
+	if (number1 == number2)
+	{
 		std::cout << "Both numbers are equal." << std::endl;
 		return 0;
 	}

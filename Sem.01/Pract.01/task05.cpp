@@ -1,18 +1,18 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
 int main()
 {
-	 double a, b;
+	double a, b;
 
-	 cout << "First number: ";
-	 cin >> a;
+	cout << "First number: ";
+	cin >> a;
 
-	 cout << "Second number: ";
-	 cin >> b;
+	cout << "Second number: ";
+	cin >> b;
 
-	 cout << boolalpha << (a < b) << endl;
+	cout << boolalpha << (a < b) << endl;
 
-	 return 0;
+	return 0;
 }

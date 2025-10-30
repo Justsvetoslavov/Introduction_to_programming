@@ -14,9 +14,9 @@ int main()
 	int minutes = (inputSeconds / 60) % 60;
 	int seconds = inputSeconds % 60;
 
-	cout << days << " days, " 
-		 << hours << " hours, " 
-		 << minutes << " minutes and " 
+	cout << days << " days, "
+		 << hours << " hours, "
+		 << minutes << " minutes and "
 		 << seconds << " seconds";
 
 	return 0;

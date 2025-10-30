@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 	double sideA, sideB, sideC;
 
 	std::cout << "Enter value for side a: ";
@@ -10,9 +11,12 @@ int main() {
 	std::cout << "Enter value for side c: ";
 	std::cin >> sideC;
 
-	if ((sideA + sideB > sideC) && (sideA + sideC > sideB) && (sideB + sideC > sideA)) {
+	if ((sideA + sideB > sideC) && (sideA + sideC > sideB) && (sideB + sideC > sideA))
+	{
 		std::cout << "The triangle is valid.\n";
-	} else {
+	}
+	else
+	{
 		std::cout << "The triangle is invalid.\n";
 	}
 

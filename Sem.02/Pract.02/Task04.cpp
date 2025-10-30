@@ -1,31 +1,46 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 	int percentage, grade;
 
 	std::cout << "Result: ";
 	std::cin >> percentage;
 
-	if (percentage >= 0 && percentage <= 100) {
+	if (percentage >= 0 && percentage <= 100)
+	{
 		bool isSixPlus = false;
 
-		if (percentage >= 90) {
+		if (percentage >= 90)
+		{
 			grade = 6;
 			isSixPlus = true;
-		} else if (percentage >= 80) {
+		}
+		else if (percentage >= 80)
+		{
 			grade = 6;
-		} else if (percentage >= 70) {
+		}
+		else if (percentage >= 70)
+		{
 			grade = 5;
-		} else if (percentage >= 60) {
+		}
+		else if (percentage >= 60)
+		{
 			grade = 4;
-		} else if (percentage >= 40) {
+		}
+		else if (percentage >= 40)
+		{
 			grade = 3;
-		} else {
+		}
+		else
+		{
 			grade = 2;
 		}
 
 		std::cout << "Grade: " << grade << (isSixPlus ? "+\n" : "\n");
-	} else {
+	}
+	else
+	{
 		std::cout << "Entered percentage is not valid!\n";
 	}
 

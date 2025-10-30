@@ -14,5 +14,5 @@ int main()
 	cout << "The quotient of the division is : " << a / b << endl;
 	cout << "The remainder of the division is : " << a % b << endl;
 
-    return 0;
+	return 0;
 }
