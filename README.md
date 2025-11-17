@@ -5,6 +5,8 @@
 - [Тема 2:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.02) Условни конструкции - if, switch и тернарен оператор.
 - [Тема 3:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.03) Цикли. Оператори break и continue.
 - [Тема 4:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.04) Функции.
+- [Тема 5:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.05) Референции и указатели.
+- [Тема 6:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.06) Масиви. Основни операции, обхождане на елементите, търсене. Многомерни масиви.
 
 ## GitHub workflow
 
