@@ -6,7 +6,7 @@
 ```c++
 <тип> <име>[<размер>]
 ```
-![array-example](https://simplesnippets.tech/wp-content/uploads/2018/03/array-diagram.jpg)
+![types-of-array](img/Types-of-array.png)
 
 ## Инициализация на масиви
 
@@ -31,6 +31,8 @@ const int SIZE = 4;
 int arr[SIZE]; //ok!
 ```
 
+![array-representation](img/Array-Representation.png)
+
 ## Достъп на елемент
 В масивите имаме константен достъп до всеки един елемент. <br />
 Достъпът става посредством индекси. Индексацията започва от 0. <br />
@@ -47,7 +49,6 @@ std::cout << arr[2]; //Отпечатва на стандартния изход
 arr не е самият масив, а **указател към първия елемент**.
 ```c++
 int arr[] = {1, 2, 400, 4, 5}
-
 std::cout << arr; //ще се отпечата АДРЕСА на масива, но не и самия масив.
 ```
 
