@@ -24,13 +24,11 @@
 ```c++
 #include<iostream>
 
-void helloWorld()
-{
+void helloWorld() {
     std::cout << "Hello World!" <<std::endl;
 }
 
-int main() 
-{
+int main()  {
     helloWorld();
     return 0;
 }
@@ -43,8 +41,7 @@ int main()
 Операторът може да се използва и при функции, които не връщат нищо (void функции), тогава return единствено прекратява функцията.
 
 ```c++
-int max(int n, int k)
-{
+int max(int n, int k) {
     return n > k ? n : k;
 }
 ```
@@ -53,13 +50,11 @@ int max(int n, int k)
 ```c++
 #include <iostream>
 
-void f(int n)
-{
+void f(int n) {
     n++;
 }
 
-int main()
-{
+int main() {
     int n = 4;
     f(n);
     std::cout << n << endl; //4
@@ -75,8 +70,7 @@ int main()
 По този начин предотвратява копирането на данни. <br />
 
 ```c++
-void swap(double &a, double &b)
-{
+void swap(double &a, double &b) {
     double temp = a;
     a = b;
     b = temp;
@@ -91,45 +85,45 @@ void swap(double &a, double &b)
 Ако намери повече от 1 подходящ се получава грешка за двусмислие. <br />
 
 ```c++
-    void cout(char a) { std::cout << a; } //1
+void cout(char a) { std::cout << a; } //1
 
-    void cout(int a) { std::cout << a; } //2
+void cout(int a) { std::cout << a; } //2
 
-    void cout(char a, int b) { std::cout << a << '-' << b; } //3
+void cout(char a, int b) { std::cout << a << '-' << b; } //3
 
-    void cout(double a, char b) { std::cout << b << '-' << a; } //4
+void cout(double a, char b) { std::cout << b << '-' << a; } //4
 
-    void cout(bool a) { std::cout << a; } //5
+void cout(bool a) { std::cout << a; } //5
 
-    void cout(char a, bool b, int c) { std::cout << a <<b << c; } //6
+void cout(char a, bool b, int c) { std::cout << a <<b << c; } //6
 
-    void cout(const int a) { std::cout << a; } //7
+void cout(const int a) { std::cout << a; } //7
 
-    void cout(char a, unsigned b) { std::cout << a << '-' <<b; } //8
+void cout(char a, unsigned b) { std::cout << a << '-' <<b; } //8
 
-    char cout(char a) { return a; } //9
+char cout(char a) { return a; } //9
 ```
 
 ```c++
-    void cout(char a) { std::cout << a; } //двусмислие с 9
+void cout(char a) { std::cout << a; } //двусмислие с 9
 
-    void cout(int a) { std::cout << a; } // двусмислие със 7
+void cout(int a) { std::cout << a; } // двусмислие със 7
 
-    void cout(char a, int b) { std::cout << a << '-' << b; } //двусмислие с 8
+void cout(char a, int b) { std::cout << a << '-' << b; } //двусмислие с 8
 
-    /*-------------------------------------------------------*/
-    void cout(double a, char b) { std::cout << b << '-' << a; }
+/*-------------------------------------------------------*/
+void cout(double a, char b) { std::cout << b << '-' << a; }
 
-    void cout(bool a) { std::cout << a; }
+void cout(bool a) { std::cout << a; }
 
-    void cout(char a, bool b, int c) { std::cout << a << b << c; }
-    /*-------------------------------------------------------*/
+void cout(char a, bool b, int c) { std::cout << a << b << c; }
+/*-------------------------------------------------------*/
 
-    void cout(const int a) { std::cout << a; } // двусмислие с 2
+void cout(const int a) { std::cout << a; } // двусмислие с 2
 
-    void cout(char a, unsigned b) { std::cout << a << '-' << b; } // двусмислие с 3
+void cout(char a, unsigned b) { std::cout << a << '-' << b; } // двусмислие с 3
 
-    char cout(char a) { return a; } // двусмислие с 1
+char cout(char a) { return a; } // двусмислие с 1
 ```
 
 **Важно!** <br />
@@ -160,13 +154,11 @@ int main()
 ```c++
 #include <iostream>
 
-void print(int a, int b = 5, char c = 't')
-{
+void print(int a, int b = 5, char c = 't') {
     std::cout << a << " " << b << " " << c;
 }
 
-int main()
-{
+int main() {
     print(4); // 4 5 t
     print(3,6); // 3 6 t
     print(3, '0'); // 3 48 t
@@ -187,17 +179,17 @@ Definition – казва на компилатора, какво всъщнос
 ```c++
 #include <iostream>
 
-void helloWorld(); //Declaration
+ //Declaration
+void helloWorld(); 
 
-int main() 
-{
+int main()  {
     helloWorld();
     
     return 0;
 }
 
-void helloWorld() //Definition
-{
+ //Definition
+void helloWorld() {
     std::cout << "Hello World!\n";
 }
 ```
