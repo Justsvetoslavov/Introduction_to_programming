@@ -6,7 +6,7 @@
 ```c++
 <тип> <име>[<размер>]
 ```
-![types-of-array](img/Types-of-array.png)
+![types-of-array](images/Types-of-array.png)
 
 ## Инициализация на масиви
 
@@ -31,7 +31,7 @@ const int SIZE = 4;
 int arr[SIZE]; //ok!
 ```
 
-![array-representation](img/Array-Representation.png)
+![array-representation](images/Array-Representation.png)
 
 ## Достъп на елемент
 - В масивите имаме константен достъп до всеки един елемент. <br />
