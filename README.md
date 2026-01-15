@@ -8,6 +8,8 @@
 - [Тема 5:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.05) Референции и указатели.
 - [Тема 6:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.06) Масиви. Основни операции, обхождане на елементите, търсене. Многомерни масиви.
 - [Тема 7:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.07) Символен низ.
+- [Тема 8:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.08) Бройни системи. Побитови операции.
+- [Тема 9:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.07) Архитектура и управление на паметта.
 
 ## GitHub workflow
 
