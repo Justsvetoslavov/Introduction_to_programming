@@ -379,6 +379,10 @@ int main() {
 Кои стекови рамки се намират в стека, във всеки един момент на изпълнение на програмата, са показани на долната картинка:
 ![Стекова рамка](images/Stack-Functions-Representation.jpg)
 
+## Допълнителни ресурси
+- [SO: What are the evaluation order guarantees introduced by C++17?](https://stackoverflow.com/questions/38501587/what-are-the-evaluation-order-guarantees-introduced-by-c17)
+- [Refining Expression Evaluation Order for Idiomatic C++](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0145r3.pdf)
+
 ## Задачи
 1. Напишете функция, която приема неотрицателно число n и връща числото обърнато. <br />
 Вход: 288  
