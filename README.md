@@ -11,6 +11,8 @@
 - [Тема 8:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.08) Бройни системи. Побитови операции.
 - [Тема 9:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.09) Архитектура и управление на паметта.
 - [Тема 10:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/Sem.10) Рекурсия
+- [Тема 11:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI/Sem.11) Указатели към функции. Функции от по-висок ред. Ламбда функции.
+- [Тема 12:](https://github.com/Justsvetoslavov/Introduction_to_programming/tree/master/SI/Sem.12) Сложност и алгоритми. Алгоритми за търсене и сортиране.
 
 ## GitHub workflow
 
