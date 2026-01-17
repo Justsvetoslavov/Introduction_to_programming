@@ -108,7 +108,6 @@ int main()
 using ptr = int (*)(int);
 using pointer = ptr (*)();
 ```
-<br />
 
 #### **Function pointer as parameter**
 
@@ -192,6 +191,7 @@ void f(int i)
     [&, i]{};       // OK: by-reference capture, except i is captured by copy
 
     [&, &i] {};     // Error: by-reference capture when by-reference is the default
+}
 ```
 
 #### **By-copy capture**
