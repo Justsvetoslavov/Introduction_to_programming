@@ -214,18 +214,18 @@ int main() {
 - const int* - указател към константа
 - int const* - указател към константа
 
-![Pointer to const & const pointer](images/example1.png)
+![Pointer to const & const pointer](00-images/example1.png)
 
 Константните указатели са като референциите, но са указатели.
 Може да се променя стойността на променливата, но НЕ може да се променя да сочи към друга променлива.
 - int* const – константен указател
 
-![Const pointer to const](images/example2.png)
+![Const pointer to const](00-images/example2.png)
 
 ### Spiral Rule - Bjarne Stroustrup
 Правилото гласи, започнете от името на променливата и се придвижваме по посока на часовниковата стрелка до следващия указател или тип.
 
-![Spiral rule](images/spiral-rule.jfif)
+![Spiral rule](00-images/spiral-rule.jfif)
 
 ```c++
 const int * const == int const * const – константен пойнтър към константа
