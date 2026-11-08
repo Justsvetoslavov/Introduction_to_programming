@@ -19,7 +19,7 @@ void Simplify(int& numerator, int& denominator) {
 
 int main() {
     int n1 = 0, d1 = 0, n2 = 0, d2 = 0;
-    std::cout << "Въведете две дроби (числител/знаменател): ";
+    std::cout << "Enter two fractions (numerator denominator): ";
     std::cin >> n1 >> d1 >> n2 >> d2;
 
     // Reduce both fractions
