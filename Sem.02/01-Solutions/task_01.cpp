@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    unsigned int n = 0;
+    int n = 0;
     std::cin >> n;
 
     if (n < 100) {
@@ -9,7 +9,7 @@ int main() {
     } else if (n <= 200) {
         std::cout << "Between 100 and 200" << std::endl;
     } else {
-        std::cout << "More than 200" << std::endl;
+        std::cout << "Greater than 200" << std::endl;
     }
 
     return 0;
