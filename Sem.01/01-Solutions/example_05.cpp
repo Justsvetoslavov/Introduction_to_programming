@@ -1,16 +1,14 @@
 #include <iostream>
 
+// Program that calculates the total number of minutes in a given number of hours
 int main() {
-    int day = 0, month = 0, year = 0;
+    const int minutesPerHour = 60;
+    const int hours = 3;
 
-    // Enter day, month and year
-    std::cout << "Enter day, month and year: ";
+    const int totalMinutes = hours * minutesPerHour;
 
-    // Read from std::cin (separated by space or newline)
-    std::cin >> day >> month >> year;
-
-    // Combine text, variables and control characters
-    std::cout << "Date: " << day << "/" << month << "/" << year << '\n';
+    std::cout << hours << " hours are "
+              << totalMinutes << " minutes.\n";
 
     return 0;
 }

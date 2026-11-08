@@ -1,14 +1,20 @@
 #include <iostream>
 
-// Program that calculates the total number of minutes in a given number of hours
 int main() {
-    const int minutesPerHour = 60;
-    const int hours = 3;
+    int age = 0;
+    double height = 0.0;
 
-    const int totalMinutes = hours * minutesPerHour;
+    std::cout << "Enter your age: ";
+    std::cin >> age;
 
-    std::cout << hours << " hours are "
-              << totalMinutes << " minutes.\n";
+    std::cout << "Enter your height in meters: ";
+    std::cin >> height;
+
+    std::cout << "\n--- Your information ---\n";
+    std::cout << "Age: " << age << '\n';
+    std::cout << "Height: " << height << " m\n";
+
+    std::cerr << "Note: the entered values were not validated.\n";
 
     return 0;
 }
