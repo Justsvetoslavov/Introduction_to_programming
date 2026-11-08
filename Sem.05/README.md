@@ -12,7 +12,7 @@
 - Типът на референцията и променливата **трябва да съвпадат**.
 - **Не копира данни** - директен достъп до оригиналната променлива.
 - **Предотвратява копирането** на големи структури от данни.
-- **Винаги валидна** - не може да бъде null (за разлика от указателите).
+- **Не може да бъде null** (за разлика от указателите), но става висяща (dangling), ако обектът, към който е свързана, престане да съществува.
 
 ### Референция като параметър на функция
 
@@ -58,7 +58,9 @@ momMoney -= 30; // Променя само momMoney
 
 std::cout << "Mom: " << momMoney << ", Father: " << fatherMoney << std::endl;
 // Изход: Mom: 70, Father: 100 (fatherMoney НЕ е засегнато)
+```
 
+```c++
 // Пример: С референция (споделен достъп)
 unsigned int familyMoney = 100;
 unsigned int& momMoney = familyMoney;    // Референция към familyMoney
@@ -162,8 +164,8 @@ std::cout << "New value of number: " << number << std::endl;    // 10
     //create another pointer and set it to point to the same address as the first pointer
     bool* gremlin = engineer;
 
-    //decrement the value 
-    (*gremlin)--;
+    //set the value to false through the second pointer
+    *gremlin = false;
 
     //set the value to true
     *engineer = true;
@@ -199,9 +201,9 @@ void Fun(char* s) {
 }
 
 int main() {
-    Fun(NULL);
+    Fun(NULL);    // зависи от компилатора: при GCC/Clang обикновено е ambiguous, при MSVC извиква Fun(int)
+    Fun(nullptr); // винаги извиква Fun(char*)
 }
-//call of overloaded 'Fun(NULL)' is ambiguous
 ```
 
 ### Указатели към константи/Константни указатели
@@ -217,7 +219,7 @@ int main() {
 
 ![Const pointer to const](00-images/example2.png)
 
-### Spiral Rule - Bjarne Stroustrup
+### Spiral Rule - David Anderson
 Правилото гласи, започнете от името на променливата и се придвижваме по посока на часовниковата стрелка до следващия указател или тип.
 
 ![Spiral rule](00-images/spiral-rule.jfif)
@@ -250,7 +252,7 @@ const int * const == int const * const – константен пойнтър �
 
 Разлики между референция и константен указател (`int* const`):
 - Референцията **трябва** да се инициализира при декларация и не може да се пренасочи към друга променлива.
-- Константният указател също не може да се пренасочи, но **може** да се декларира без инициализация (макар и да не е добра практика).
+- Константният указател също не може да се пренасочи и също **трябва** да се инициализира при декларация.
 - Референцията използва по-проста синтаксис (не се нуждае от `*` за дереференция).
 - Константният указател може да бъде `nullptr`, докато референцията винаги трябва да сочи към валиден обект.
 - Референцията е по-безопасна, тъй като не може да бъде null.
