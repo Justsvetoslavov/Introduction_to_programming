@@ -3,9 +3,8 @@
 
 ## if - else
 ```c++
-if (<условие>)
-{
-  <действие>
+if (<условие>) {
+    <действие>
 }
 ```
 
@@ -17,13 +16,10 @@ if (<условие>)
 - `<действие>` – един оператор или последователност от оператори, които се изпълняват, когато условието е изпълнено.
 
 ```c++
-if (<условие>)
-{
-  // изпълнява се, ако условието е истина
-}
-else // не е задължителен компонент
-{
-  // изпълнява се, ако условието е лъжа
+if (<условие>) {
+    // изпълнява се, ако условието е истина
+} else { // не е задължителен компонент
+    // изпълнява се, ако условието е лъжа
 }
 ```
 
@@ -38,37 +34,24 @@ else // не е задължителен компонент
 ```c++
 int x = 10;
 
-if (x > 5)
-{
+if (x > 5) {
     std::cout << "x е по-голямо от 5" << std::endl;
-}
-else
-{
+} else {
     std::cout << "x е по-малко или равно на 5" << std::endl;
 }
 ```
 
 ## if - else if - else
 ```c++
-if (<condition1>)
-{
+if (<condition1>) {
     // изпълнява се, ако <condition1> е истина
-}
-else if (<condition2>)
-{
+} else if (<condition2>) {
     // изпълнява се, ако <condition1> е лъжа и <condition2> е истина
-}
-else if (<condition3>)
-{
+} else if (<condition3>) {
     // изпълнява се, ако <condition1> и <condition2> са лъжа и <condition3> е истина
-}
-// ... може да има произволен брой else if
-else if (<conditionK>)
-{
+} else if (<conditionK>) { // ... може да има произволен брой else if
     // изпълнява се, ако всички предходни условия са лъжа и <conditionK> е истина
-}
-else // не е задължителен компонент
-{
+} else { // не е задължителен компонент
     // изпълнява се, ако всички горни условия са лъжа
 }
 ```
@@ -82,24 +65,15 @@ else // не е задължителен компонент
 ```c++
 int score = 85;
 
-if (score >= 90)
-{
+if (score >= 90) {
     std::cout << "Отличен" << std::endl;
-}
-else if (score >= 75)
-{
+} else if (score >= 75) {
     std::cout << "Много добър" << std::endl;
-}
-else if (score >= 60)
-{
+} else if (score >= 60) {
     std::cout << "Добър" << std::endl;
-}
-else if (score >= 50)
-{
+} else if (score >= 50) {
     std::cout << "Среден" << std::endl;
-}
-else
-{
+} else {
     std::cout << "Слаб" << std::endl;
 }
 // Изход: Много добър
@@ -113,25 +87,20 @@ else
 int x = 10;
 
 // Независими if конструкции
-if (x > 0)
-{
+if (x > 0) {
     std::cout << "Positive" << std::endl;
 }
 
-if (x > 5)
-{
+if (x > 5) {
     std::cout << "Greater than 5" << std::endl;
 }
 
 int y = 10;
 
 // Верига if-else if
-if (y > 0)
-{
+if (y > 0) {
     std::cout << "Positive" << std::endl;
-}
-else if (y > 5)
-{
+} else if (y > 5) {
     std::cout << "Greater than 5" << std::endl;
 }
 ```
@@ -139,15 +108,14 @@ else if (y > 5)
 ## Switch statement
 
 ```c++
-switch(<израз>)
-{
-  case <стойност1> : <действия>;
-  break;
-  case <стойност2> : <действия>
-  break;
-  case <стойностN> : <действия>;
-  break;
-  default: <действия>;
+switch (<израз>) {
+    case <стойност1> : <действия>;
+    break;
+    case <стойност2> : <действия>
+    break;
+    case <стойностN> : <действия>;
+    break;
+    default: <действия>;
 }
 ```
 
@@ -166,8 +134,7 @@ switch(<израз>)
     - в `switch`, ако липсва `break`, изпълнението продължава със следващите оператори, включително тези след следващите case етикети. Това поведение се нарича fall-through.
     - fall-through може да се използва умишлено, когато няколко case етикета трябва да водят до едно и също действие.
 ```c++
-switch (<израз>)
-{
+switch (<израз>) {
     case value1:
         // код за value1
         break;
@@ -190,8 +157,7 @@ switch (<израз>)
 ```c++
 int day = 3;
 
-switch (day)
-{
+switch (day) {
     case 1:
         std::cout << "Понеделник" << std::endl;
         break;

@@ -19,24 +19,23 @@
 **Pass by value (по копие) vs Pass by reference (по референция):**
 
 ```c++
-void example1(int a) {
+void Example1(int a) {
     a += 5; //copy | no modification
 }
 
-void example2(int& a) {
+void Example2(int& a) {
     a += 5; //by reference | modified
 }
 
-int main()
-{
+int main() {
     int x = 5;
     
     std::cout << "Original: " << x << std::endl;     // 5
     
-    example1(x); // Подава се копие на x
+    Example1(x); // Подава се копие на x
     std::cout << "After example1: " << x << std::endl; // 5 (БЕЗ промяна!)
     
-    example2(x); // Подава се референция към x
+    Example2(x); // Подава се референция към x
     std::cout << "After example2: " << x << std::endl; // 10 (С промяна!)
     
     return 0;
@@ -44,57 +43,55 @@ int main()
 ```
 
 **Какво се случва:**
-- В `example1()` - създава се **копие** на `x`, промените засягат само копието
-- В `example2()` - `a` е **референция** към `x`, промените засягат директно `x`
+- В `Example1()` - създава се **копие** на `x`, промените засягат само копието
+- В `Example2()` - `a` е **референция** към `x`, промените засягат директно `x`
 
 ### Пример: Разлика между копие и референция
 
 ```c++
 // Пример: БЕЗ референция (създават се копия)
-unsigned int FamilyMoney = 100;
-unsigned int MomMoney = FamilyMoney;    // Копие на стойността
-unsigned int FatherMoney = FamilyMoney; // Друго копие
+unsigned int familyMoney = 100;
+unsigned int momMoney = familyMoney;    // Копие на стойността
+unsigned int fatherMoney = familyMoney; // Друго копие
 
-MomMoney -= 30; // Променя само MomMoney
+momMoney -= 30; // Променя само momMoney
 
-std::cout << "Mom: " << MomMoney << ", Father: " << FatherMoney << std::endl;
-// Изход: Mom: 70, Father: 100 (FatherMoney НЕ е засегнато)
+std::cout << "Mom: " << momMoney << ", Father: " << fatherMoney << std::endl;
+// Изход: Mom: 70, Father: 100 (fatherMoney НЕ е засегнато)
 
 // Пример: С референция (споделен достъп)
-unsigned int FamilyMoney = 100;
-unsigned int &MomMoney = FamilyMoney;    // Референция към FamilyMoney
-unsigned int &FatherMoney = FamilyMoney; // Друга референция към същото
+unsigned int familyMoney = 100;
+unsigned int& momMoney = familyMoney;    // Референция към familyMoney
+unsigned int& fatherMoney = familyMoney; // Друга референция към същото
 
-MomMoney -= 30; // Променя FamilyMoney директно
+momMoney -= 30; // Променя familyMoney директно
 
-std::cout << "Mom: " << MomMoney << ", Father: " << FatherMoney << std::endl;
-// Изход: Mom: 70, Father: 70 (и двете са референции към FamilyMoney)
+std::cout << "Mom: " << momMoney << ", Father: " << fatherMoney << std::endl;
+// Изход: Mom: 70, Father: 70 (и двете са референции към familyMoney)
 
-std::cout << "Family: " << FamilyMoney << std::endl; // 70
+std::cout << "Family: " << familyMoney << std::endl; // 70
 ```
 
 **Обяснение:**
 - Без референция: всяка променлива има **своя копие** на данните
 - С референция: всички променливи сочат към **едни и същи данни** в паметта
 
-### Класически пример: Функция swap
+### Класически пример: Функция Swap
 
-- swap (по копие):
+- Swap (по копие):
 ```c++
-void swap(double a, double b) // Параметри по копие
-{
+void Swap(double a, double b) { // Параметри по копие
     double temp = a;
     a = b;
     b = temp;
     // Разменят се САМО локалните копия!
 }
 
-int main()
-{
+int main() {
     double x = 3.5, y = 7.2;
     std::cout << "Before: x=" << x << ", y=" << y << std::endl; // 3.5, 7.2
     
-    swap(x, y); // Нищо няма да се случи!
+    Swap(x, y); // Нищо няма да се случи!
     
     std::cout << "After: x=" << x << ", y=" << y << std::endl;  // 3.5, 7.2
     // x и y НЕ СА разменени, защото функцията работи с копия!
@@ -102,22 +99,20 @@ int main()
 }
 ```
 
-- swap (по референция):
+- Swap (по референция):
 ```c++
-void swap(double& a, double& b) // Параметри по референция
-{
+void Swap(double& a, double& b) { // Параметри по референция
     double temp = a;
     a = b;
     b = temp;
     // Разменят се оригиналните променливи!
 }
 
-int main()
-{
+int main() {
     double x = 3.5, y = 7.2;
     std::cout << "Before: x=" << x << ", y=" << y << std::endl; // 3.5, 7.2
     
-    swap(x, y); // Работи!
+    Swap(x, y); // Работи!
     
     std::cout << "After: x=" << x << ", y=" << y << std::endl;  // 7.2, 3.5
     // x и y СА разменени успешно!
@@ -130,7 +125,7 @@ int main()
 - трябва да сте сигурни, че променливата, чиято референция връщате, **съществува и следприключването на функцията**, тоест **не връщате локално създаден обект**.
 
 ```c++
-int& errorProne() {
+int& ErrorProne() {
     int a = 5;
     return a;
 }
@@ -194,19 +189,19 @@ std::cout << "New value of number: " << number << std::endl;    // 10
 
 ```c++
 // function with integer argument
-void fun(int N)  { 
-    std::cout << "fun(int)\n";
+void Fun(int n) {
+    std::cout << "Fun(int)\n";
 }
 
 // Overloaded function with char pointer argument
-void fun(char* s) {
-    std::cout << "fun(char*)\n";
+void Fun(char* s) {
+    std::cout << "Fun(char*)\n";
 }
 
 int main() {
-    fun(NULL);
+    Fun(NULL);
 }
-//call of overloaded 'fun(NULL)' is ambiguous
+//call of overloaded 'Fun(NULL)' is ambiguous
 ```
 
 ### Указатели към константи/Константни указатели
