@@ -1,10 +1,10 @@
 #include <iostream>
 
 int main() {
-    int a, b;
+    int a = 0, b = 0;
     std::cin >> a >> b;
 
-    int minNumber = a > b ? b : a;
+    const int minNumber = a > b ? b : a;
 
     int gcd = 1;
 

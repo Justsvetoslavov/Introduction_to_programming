@@ -1,6 +1,6 @@
 int Reverse(unsigned int n) {
-    unsigned int result;
-    short lastDigit;
+    unsigned int result = 0;
+    short lastDigit = 0;
 
     while (n != 0) {
         lastDigit = n % 10;

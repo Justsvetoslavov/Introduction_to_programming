@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    int n;
+    int n = 0;
     std::cin >> n;
     int reversed = 0;
 

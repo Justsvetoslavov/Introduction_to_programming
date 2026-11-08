@@ -1,17 +1,17 @@
 #include <iostream>
 
 int main() {
-    int a, b;
+    int a = 0, b = 0;
     std::cin >> a >> b;
 
     if (a < b) {
-        int temp = a;
+        const int temp = a;
         a = b;
         b = temp;
     }
 
     while (b != 0) {
-        int r = a % b;
+        const int r = a % b;
 
         a = b;
         b = r;

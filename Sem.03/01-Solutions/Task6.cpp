@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    int a;
+    int a = 0;
     std::cin >> a;
 
     if (a == 2) {
@@ -14,7 +14,7 @@ int main() {
         return 0;
     }
 
-    double squareRoot = std::sqrt(a);
+    const double squareRoot = std::sqrt(a);
     for (int i = 3; i <= squareRoot; i += 2) {
         if (a % i == 0) {
             std::cout << "Not Prime";

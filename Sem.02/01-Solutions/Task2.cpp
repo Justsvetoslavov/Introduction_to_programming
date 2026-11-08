@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    double speed;
+    double speed = 0.0;
     std::cin >> speed;
 
     if (speed <= 10) {

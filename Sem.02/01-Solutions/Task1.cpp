@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    unsigned int n;
+    unsigned int n = 0;
     std::cin >> n;
 
     if (n < 100) {
