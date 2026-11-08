@@ -2,10 +2,8 @@
 using namespace std;
 
 // Функция за НОД
-int gcd(int a, int b)
-{
-    while(b != 0)
-    {
+int gcd(int a, int b) {
+    while (b != 0) {
         int t = b;
         b = a % b;
         a = t;
@@ -14,15 +12,13 @@ int gcd(int a, int b)
 }
 
 // Функция за съкращаване
-void simplify(int& numerator, int& denominator)
-{
+void simplify(int& numerator, int& denominator) {
     int g = gcd(numerator, denominator);
     numerator /= g;
     denominator /= g;
 }
 
-int main()
-{
+int main() {
     int n1, d1, n2, d2;
     cout << "Въведете две дроби (числител/знаменател): ";
     cin >> n1 >> d1 >> n2 >> d2;

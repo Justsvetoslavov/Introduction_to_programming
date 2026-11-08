@@ -1,8 +1,7 @@
 #include <iostream>
 
 // Program that calculates the total number of minutes in a given number of hours
-int main()
-{
+int main() {
     const int minutesPerHour = 60;
     int hours = 3;
 

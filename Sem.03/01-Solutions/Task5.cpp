@@ -2,27 +2,24 @@
 
 using namespace std;
 
-int main()
-{
-	int a, b;
-	cin >> a >> b;
+int main() {
+    int a, b;
+    cin >> a >> b;
 
-	if (a < b)
-	{
-		int temp = a;
-		a = b;
-		b = temp;
-	}
+    if (a < b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
 
-	while (b != 0)
-	{
-		int r = a % b;
+    while (b != 0) {
+        int r = a % b;
 
-		a = b;
-		b = r;
-	}
+        a = b;
+        b = r;
+    }
 
-	cout << a;
+    cout << a;
 
-	return 0;
+    return 0;
 }

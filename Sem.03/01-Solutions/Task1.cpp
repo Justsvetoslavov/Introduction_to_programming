@@ -2,17 +2,15 @@
 
 using namespace std;
 
-int main()
-{
-	int sum = 0;
-	int n;
-	do
-	{
-		cin >> n;
-		sum += n;
-	} while (n != 0);
+int main() {
+    int sum = 0;
+    int n;
+    do {
+        cin >> n;
+        sum += n;
+    } while (n != 0);
 
-	cout << sum;
+    cout << sum;
 
-	return 0;
+    return 0;
 }

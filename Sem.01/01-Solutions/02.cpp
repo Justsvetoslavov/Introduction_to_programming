@@ -18,9 +18,9 @@ int main() {
     std::cout << "File path: C:\\Users\\Nikola\\Desktop\\project.cpp\n";
 
     // 5. Escaping a single quote (\') and printing the literal text "\n" using \\n
-        std::cout << "Single quote character: \'" 
-                << " | Literal escape sequence: \\n" 
-                << '\n'; // this last one triggers the actual newline
+    std::cout << "Single quote character: \'" 
+              << " | Literal escape sequence: \\n" 
+              << '\n'; // this last one triggers the actual newline
 
     return 0; // signal to the operating system that the execution was successful
 }

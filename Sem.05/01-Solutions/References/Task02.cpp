@@ -1,23 +1,20 @@
-#include <iostream>
 #include <cctype>
+#include <iostream>
 
 using namespace std;
 
 // Custom-made functions
-void toUpperCustom(char& c)
-{
+void toUpperCustom(char& c) {
     if (c >= 'a' && c <= 'z')
         c -= ('a' - 'A');
 }
 
-void toLowerCustom(char& c)
-{
+void toLowerCustom(char& c) {
     if (c >= 'A' && c <= 'Z')
         c += ('a' - 'A');
 }
 
-int main()
-{
+int main() {
     // Custom-made functions examples
     char ch1 = 'a';
     char ch2 = 'B';
