@@ -165,25 +165,7 @@ int main() {
 }
 ```
 
-**Класически пример - swap функция:**
-```c++
-void Swap(double &a, double &b) {
-    double temp = a;
-    a = b;
-    b = temp;
-}
-
-int main() {
-    double x = 3.5, y = 7.2;
-    std::cout << "Before: x=" << x << ", y=" << y << std::endl; // x=3.5, y=7.2
-    
-    Swap(x, y);
-    
-    std::cout << "After: x=" << x << ", y=" << y << std::endl;  // x=7.2, y=3.5
-    
-    return 0;
-}
-```
+Класическият пример е функцията `Swap`, която е разгледана в [Тема 5](../Sem.05/README.md).
 
 ### Как работи pass by reference
 - При извикване **НЕ се създава копие**.
@@ -367,10 +349,6 @@ int main() {
 ```
 Кои стекови рамки се намират в стека, във всеки един момент на изпълнение на програмата, са показани на долната картинка:   
 ![Стекова рамка](00-images/Stack-Functions-Representation.jpg)
-
-## Допълнителни ресурси
-- [SO: What are the evaluation order guarantees introduced by C++17?](https://stackoverflow.com/questions/38501587/what-are-the-evaluation-order-guarantees-introduced-by-c17)
-- [Refining Expression Evaluation Order for Idiomatic C++](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0145r3.pdf)
 
 ## Задачи
 1. Напишете функция, която приема неотрицателно число n и връща числото обърнато. <br />
