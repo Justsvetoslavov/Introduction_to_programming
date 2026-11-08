@@ -100,7 +100,7 @@ std::cout << "You entered: " << number << std::endl;
 
 ![do-while-vs-while-loop](00-images/while-vs-do-while-comparison.jpg)
 
-### Цикъл for
+## Цикъл for
 ```c++
 for ( <инициализация>; <условие> ; <корекция> ) {
     <действия> //Тяло на цикъла
