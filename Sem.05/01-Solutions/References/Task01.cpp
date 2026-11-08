@@ -1,6 +1,6 @@
 #include <iostream>
 
-void swap(int& a, int& b) {
+void Swap(int& a, int& b) {
     const int temp = a;
     a = b;
     b = temp;
@@ -8,7 +8,7 @@ void swap(int& a, int& b) {
 
 int main() {
     int x = 5, y = 7;
-    swap(x, y);
+    Swap(x, y);
     std::cout << x << " " << y << std::endl; // 7 5
     return 0;
 }

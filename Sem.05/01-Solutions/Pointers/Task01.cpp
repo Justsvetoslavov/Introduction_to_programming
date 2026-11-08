@@ -1,6 +1,6 @@
 #include <iostream>
 
-void swapPointers(int** p1, int** p2) {
+void SwapPointers(int** p1, int** p2) {
     int* temp = *p1;
     *p1 = *p2;
     *p2 = temp;
@@ -11,7 +11,7 @@ int main() {
     int* pa = &a;
     int* pb = &b;
 
-    swapPointers(&pa, &pb);
+    SwapPointers(&pa, &pb);
 
     std::cout << *pa << " " << *pb << std::endl; // 10 5
     return 0;

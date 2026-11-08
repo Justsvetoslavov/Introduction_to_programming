@@ -2,12 +2,12 @@
 #include <iostream>
 
 // Custom-made functions
-void toUpperCustom(char& c) {
+void ToUpperCustom(char& c) {
     if (c >= 'a' && c <= 'z')
         c -= ('a' - 'A');
 }
 
-void toLowerCustom(char& c) {
+void ToLowerCustom(char& c) {
     if (c >= 'A' && c <= 'Z')
         c += ('a' - 'A');
 }
@@ -18,8 +18,8 @@ int main() {
     char ch2 = 'B';
 
     // Custom-made functions
-    toUpperCustom(ch1);
-    toLowerCustom(ch2);
+    ToUpperCustom(ch1);
+    ToLowerCustom(ch2);
 
     std::cout << "Custom: " << ch1 << " " << ch2 << std::endl;
 

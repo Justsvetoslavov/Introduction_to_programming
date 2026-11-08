@@ -1,11 +1,11 @@
 #include <iostream>
 
-int& prefixPlusPlus(int& a) {
+int& PrefixPlusPlus(int& a) {
     a = a + 1;
     return a;
 }
 
-int suffixPlusPlus(int& a) {
+int SuffixPlusPlus(int& a) {
     a = a + 1;
     return a - 1;
 }
@@ -13,6 +13,6 @@ int suffixPlusPlus(int& a) {
 int main() {
     int a = 1;
 
-    prefixPlusPlus(a);
-    suffixPlusPlus(a);
+    PrefixPlusPlus(a);
+    SuffixPlusPlus(a);
 }
