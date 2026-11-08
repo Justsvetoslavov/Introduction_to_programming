@@ -1,4 +1,6 @@
-int Reverse(unsigned int n) {
+#include <iostream>
+
+unsigned int Reverse(unsigned int n) {
     unsigned int result = 0;
     short lastDigit = 0;
 
@@ -9,4 +11,13 @@ int Reverse(unsigned int n) {
     }
 
     return result;
+}
+
+int main() {
+    unsigned int n = 0;
+    std::cin >> n;
+
+    std::cout << Reverse(n) << std::endl;
+
+    return 0;
 }
