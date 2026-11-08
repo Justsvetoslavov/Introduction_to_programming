@@ -350,6 +350,35 @@ int main() {
 Кои стекови рамки се намират в стека, във всеки един момент на изпълнение на програмата, са показани на долната картинка:   
 ![Стекова рамка](00-images/Stack-Functions-Representation.jpg)
 
+## Допълнителни ресурси
+
+### Ред на изчисляване при извикване на функция
+Редът, в който се изчисляват аргументите на функция, не е определен от стандарта. От C++17 изчисляването на отделните аргументи не се преплита, а изразът, който определя извикваната функция, се изчислява преди тях. При някои оператори редът е гарантиран: `<<` и `>>` се изчисляват отляво надясно, а при `=` дясната страна се изчислява преди лявата.
+
+```c++
+#include <iostream>
+
+int Next(int& counter) {
+    return ++counter;
+}
+
+void Print(int a, int b) {
+    std::cout << a << ' ' << b << '\n';
+}
+
+int main() {
+    int counter = 0;
+
+    Print(Next(counter), Next(counter)); // "1 2" или "2 1" - редът не е определен
+    std::cout << Next(counter) << ' ' << Next(counter) << '\n'; // "3 4" - от C++17 редът е гарантиран
+
+    return 0;
+}
+```
+
+- [SO: What are the evaluation order guarantees introduced by C++17?](https://stackoverflow.com/questions/38501587/what-are-the-evaluation-order-guarantees-introduced-by-c17)
+- [Refining Expression Evaluation Order for Idiomatic C++](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0145r3.pdf)
+
 ## Задачи
 1. Напишете функция, която приема неотрицателно число n и връща числото обърнато. <br />
 Вход: 288  
