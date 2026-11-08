@@ -40,11 +40,11 @@ int x = 10;
 
 if (x > 5)
 {
-    cout << "x е по-голямо от 5" << endl;
+    std::cout << "x е по-голямо от 5" << std::endl;
 }
 else
 {
-    cout << "x е по-малко или равно на 5" << endl;
+    std::cout << "x е по-малко или равно на 5" << std::endl;
 }
 ```
 
@@ -84,23 +84,23 @@ int score = 85;
 
 if (score >= 90)
 {
-    cout << "Отличен" << endl;
+    std::cout << "Отличен" << std::endl;
 }
 else if (score >= 75)
 {
-    cout << "Много добър" << endl;
+    std::cout << "Много добър" << std::endl;
 }
 else if (score >= 60)
 {
-    cout << "Добър" << endl;
+    std::cout << "Добър" << std::endl;
 }
 else if (score >= 50)
 {
-    cout << "Среден" << endl;
+    std::cout << "Среден" << std::endl;
 }
 else
 {
-    cout << "Слаб" << endl;
+    std::cout << "Слаб" << std::endl;
 }
 // Изход: Много добър
 ```
@@ -115,12 +115,12 @@ int x = 10;
 // Независими if конструкции
 if (x > 0)
 {
-    cout << "Positive" << endl;
+    std::cout << "Positive" << std::endl;
 }
 
 if (x > 5)
 {
-    cout << "Greater than 5" << endl;
+    std::cout << "Greater than 5" << std::endl;
 }
 
 int y = 10;
@@ -128,11 +128,11 @@ int y = 10;
 // Верига if-else if
 if (y > 0)
 {
-    cout << "Positive" << endl;
+    std::cout << "Positive" << std::endl;
 }
 else if (y > 5)
 {
-    cout << "Greater than 5" << endl;
+    std::cout << "Greater than 5" << std::endl;
 }
 ```
 
@@ -193,32 +193,32 @@ int day = 3;
 switch (day)
 {
     case 1:
-        cout << "Понеделник" << endl;
+        std::cout << "Понеделник" << std::endl;
         break;
     
     case 2:
-        cout << "Вторник" << endl;
+        std::cout << "Вторник" << std::endl;
         break;
     
     case 3:
-        cout << "Сряда" << endl;
+        std::cout << "Сряда" << std::endl;
         break;
     
     case 4:
-        cout << "Четвъртък" << endl;
+        std::cout << "Четвъртък" << std::endl;
         break;
     
     case 5:
-        cout << "Петък" << endl;
+        std::cout << "Петък" << std::endl;
         break;
     
     case 6:
     case 7:
-        cout << "Уикенд" << endl; // fall-through за case 6 и 7
+        std::cout << "Уикенд" << std::endl; // fall-through за case 6 и 7
         break;
     
     default:
-        cout << "Невалиден ден" << endl;
+        std::cout << "Невалиден ден" << std::endl;
         break;
 }
 // Изход: Сряда
@@ -254,17 +254,17 @@ switch (day)
 int a = 10, b = 20;
 int max = (a > b) ? a : b; // max = 20
 
-// Проверка за четност
+// Проверка за четност (std::string изисква #include <string>)
 int num = 7;
-string result = (num % 2 == 0) ? "четно" : "нечетно"; // result = "нечетно"
+std::string result = (num % 2 == 0) ? "четно" : "нечетно"; // result = "нечетно"
 
-// Използване в cout
+// Използване в std::cout
 int age = 16;
-cout << "Вие сте " << ((age >= 18) ? "пълнолетен" : "непълнолетен") << endl;
+std::cout << "Вие сте " << ((age >= 18) ? "пълнолетен" : "непълнолетен") << std::endl;
 
 // Вложени тернарни оператори (НЕ е препоръчително за четимост)
 int x = 5;
-string type = (x > 0) ? "положително" : (x < 0) ? "отрицателно" : "нула";
+std::string type = (x > 0) ? "положително" : (x < 0) ? "отрицателно" : "нула";
 ```
 
 **Важно:**

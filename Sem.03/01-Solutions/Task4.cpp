@@ -1,10 +1,8 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
     int a, b;
-    cin >> a >> b;
+    std::cin >> a >> b;
 
     int minNumber = a > b ? b : a;
 
@@ -15,7 +13,7 @@ int main() {
             gcd = i;
     }
 
-    cout << gcd;
+    std::cout << gcd;
 
     return 0;
 }

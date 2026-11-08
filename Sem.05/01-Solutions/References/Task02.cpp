@@ -1,8 +1,6 @@
 #include <cctype>
 #include <iostream>
 
-using namespace std;
-
 // Custom-made functions
 void toUpperCustom(char& c) {
     if (c >= 'a' && c <= 'z')
@@ -23,17 +21,17 @@ int main() {
     toUpperCustom(ch1);
     toLowerCustom(ch2);
 
-    cout << "Custom: " << ch1 << " " << ch2 << endl;
+    std::cout << "Custom: " << ch1 << " " << ch2 << std::endl;
 
     // STL functions example
     char ch3 = 'a';
     char ch4 = 'B';
 
     // STL functions
-    ch3 = toupper(ch3);
-    ch4 = tolower(ch4);
+    ch3 = std::toupper(ch3);
+    ch4 = std::tolower(ch4);
 
-    cout << "STL:    " << ch3 << " " << ch4 << endl;
+    std::cout << "STL:    " << ch3 << " " << ch4 << std::endl;
 
     return 0;
 }

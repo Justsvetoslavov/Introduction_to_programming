@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int* bigger(int* x, int* y) {
     if (*x > *y)
@@ -10,6 +9,6 @@ int* bigger(int* x, int* y) {
 int main() {
     int a = 7, b = 3;
     int* p = bigger(&a, &b);
-    cout << *p << endl; // 7
+    std::cout << *p << std::endl; // 7
     return 0;
 }

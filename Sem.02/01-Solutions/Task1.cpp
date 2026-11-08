@@ -1,16 +1,15 @@
 #include <iostream>
-using namespace std;
 
 int main() {
     unsigned int n;
-    cin >> n;
+    std::cin >> n;
 
     if (n < 100) {
-        cout << "Less than 100" << endl;
+        std::cout << "Less than 100" << std::endl;
     } else if (n <= 200) {
-        cout << "Between 100 and 200" << endl;
+        std::cout << "Between 100 and 200" << std::endl;
     } else {
-        cout << "More than 200" << endl;
+        std::cout << "More than 200" << std::endl;
     }
 
     return 0;

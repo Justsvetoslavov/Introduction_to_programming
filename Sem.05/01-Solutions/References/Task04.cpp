@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 // Функция за НОД
 int gcd(int a, int b) {
@@ -20,8 +19,8 @@ void simplify(int& numerator, int& denominator) {
 
 int main() {
     int n1, d1, n2, d2;
-    cout << "Въведете две дроби (числител/знаменател): ";
-    cin >> n1 >> d1 >> n2 >> d2;
+    std::cout << "Въведете две дроби (числител/знаменател): ";
+    std::cin >> n1 >> d1 >> n2 >> d2;
 
     // съкращаваме двете дроби
     simplify(n1, d1);
@@ -34,6 +33,6 @@ int main() {
     // съкращаваме резултата
     simplify(numerator, denominator);
 
-    cout << numerator << "/" << denominator << endl;
+    std::cout << numerator << "/" << denominator << std::endl;
     return 0;
 }

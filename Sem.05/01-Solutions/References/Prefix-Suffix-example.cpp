@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int& prefixPlusPlus(int& a) {
     a = a + 1;

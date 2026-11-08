@@ -1,20 +1,19 @@
 #include <iostream>
-using namespace std;
 
 int main() {
     double speed;
-    cin >> speed;
+    std::cin >> speed;
 
     if (speed <= 10) {
-        cout << "Slow" << endl;
+        std::cout << "Slow" << std::endl;
     } else if (speed < 50) {
-        cout << "Average" << endl;
+        std::cout << "Average" << std::endl;
     } else if (speed < 150) {
-        cout << "Fast" << endl;
+        std::cout << "Fast" << std::endl;
     } else if (speed < 1000) {
-        cout << "Ultra fast" << endl;
+        std::cout << "Ultra fast" << std::endl;
     } else {
-        cout << "Extremely fast" << endl;
+        std::cout << "Extremely fast" << std::endl;
     }
 
     return 0;
