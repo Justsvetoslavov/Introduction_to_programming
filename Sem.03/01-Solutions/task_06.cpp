@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 
 int main() {
@@ -9,7 +10,7 @@ int main() {
         return 0;
     }
 
-    if (a % 2 == 0 || a == 1) {
+    if (a < 2 || a % 2 == 0) {
         std::cout << "Not Prime";
         return 0;
     }
