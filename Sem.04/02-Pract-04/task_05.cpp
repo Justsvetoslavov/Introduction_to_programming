@@ -1,7 +1,8 @@
 #include <iostream>
 
-int Abs(int num) {
-    return num < 0 ? -num : num;
+long long Abs(int num) {
+    return num < 0 ? -static_cast<long long>(num) : num; // smallest value of int is -2147483648,
+                                                         // which does not fit in int.
 }
 
 int main() {

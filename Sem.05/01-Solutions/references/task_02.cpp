@@ -28,8 +28,8 @@ int main() {
     char ch4 = 'B';
 
     // STL functions
-    ch3 = std::toupper(ch3);
-    ch4 = std::tolower(ch4);
+    ch3 = static_cast<char>(std::toupper(ch3));
+    ch4 = static_cast<char>(std::tolower(ch4));
 
     std::cout << "STL:    " << ch3 << " " << ch4 << std::endl;
 

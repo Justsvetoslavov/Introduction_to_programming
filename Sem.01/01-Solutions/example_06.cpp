@@ -10,11 +10,14 @@ int main() {
     std::cout << "Enter your height in meters: ";
     std::cin >> height;
 
+    if(age < 0 || height < 0.0) {
+        std::cerr << "Invalid input\n";
+        return 1;
+    }
+
     std::cout << "\n--- Your information ---\n";
     std::cout << "Age: " << age << '\n';
     std::cout << "Height: " << height << " m\n";
-
-    std::cerr << "Note: the entered values were not validated.\n";
 
     return 0;
 }

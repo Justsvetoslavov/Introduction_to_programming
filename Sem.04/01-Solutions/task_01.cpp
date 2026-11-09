@@ -1,7 +1,7 @@
 #include <iostream>
 
-unsigned int Reverse(unsigned int n) {
-    unsigned int result = 0;
+unsigned long long Reverse(unsigned int n) {
+    unsigned long long result = 0;
     short lastDigit = 0;
 
     while (n != 0) {
