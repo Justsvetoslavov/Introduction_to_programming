@@ -13,7 +13,7 @@ int main() {
     for (int number = a; number <= b; ++number) {
         bool isPrime = number >= 2;
 
-        for (int divisor = 2; divisor * divisor <= number; ++divisor) {
+        for (int divisor = 2; divisor <= number / divisor; ++divisor) {
             if (number % divisor == 0) {
                 isPrime = false;
                 break;
