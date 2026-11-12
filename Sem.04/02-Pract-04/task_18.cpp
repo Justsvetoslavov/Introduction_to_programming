@@ -17,6 +17,11 @@ int main() {
     int number = 0;
     std::cin >> number;
 
+    if (number <= 1) {
+        std::cout << "Invalid input\n";
+        return 1;
+    }
+
     PrintFactorization(number);
     std::cout << '\n';
 

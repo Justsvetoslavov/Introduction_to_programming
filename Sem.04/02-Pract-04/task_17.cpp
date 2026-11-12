@@ -15,9 +15,15 @@ bool IsPrime(int number) {
 }
 
 void PrintPrimesUpTo(int limit) {
+    bool isFirst = true;
+
     for (int number = 2; number <= limit; ++number) {
         if (IsPrime(number)) {
-            std::cout << number << ' ';
+            if (!isFirst) {
+                std::cout << ' ';
+            }
+            isFirst = false;
+            std::cout << number;
         }
     }
 }

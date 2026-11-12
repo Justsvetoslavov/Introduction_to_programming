@@ -1,18 +1,39 @@
 #include <iostream>
+#include <limits>
 
 int AskUser(int from, int to) {
+    if (from > to) {
+        const int temp = from;
+        from = to;
+        to = temp;
+    }
+
     int number = 0;
 
-    do {
+    while (true) {
         std::cout << "Enter a number in [" << from << ", " << to << "]: ";
-        std::cin >> number;
-    } while (std::cin && (number < from || number > to));
+        if (!(std::cin >> number)) {
+            if (std::cin.eof()) {
+                return 0;
+            }
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
+        }
 
-    return number;
+        if (number >= from && number <= to) {
+            return number;
+        }
+    }
 }
 
 int main() {
-    std::cout << AskUser(1, 10) << '\n';
+    const int number = AskUser(1, 10);
+    if (!std::cin) {
+        std::cout << "Invalid input\n";
+        return 1;
+    }
 
+    std::cout << number << '\n';
     return 0;
 }

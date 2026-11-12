@@ -6,6 +6,7 @@ unsigned int Reverse(unsigned int n) {
 
     while (n != 0) {
         lastDigit = n % 10;
+        // Equivalent to: result = result * 10 + n % 10;
         (result *= 10) += lastDigit;
         n /= 10;
     }

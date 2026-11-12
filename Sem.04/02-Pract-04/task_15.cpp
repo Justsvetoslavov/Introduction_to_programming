@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 constexpr int kLowerBound = 100;
 constexpr int kUpperBound = 100000;
@@ -10,10 +11,20 @@ bool IsValid(int number) {
 int ReadValidNumber() {
     int number = 0;
 
-    do {
+    while (true) {
         std::cout << "Enter a number in [" << kLowerBound << ";" << kUpperBound << "]: ";
-        std::cin >> number;
-    } while (std::cin && !IsValid(number));
+        if (!(std::cin >> number)) {
+            if (std::cin.eof()) {
+                break;
+            }
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
+        }
+        if (IsValid(number)) {
+            break;
+        }
+    }
 
     return number;
 }
