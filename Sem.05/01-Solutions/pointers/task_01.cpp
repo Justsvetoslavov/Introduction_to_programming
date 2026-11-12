@@ -13,6 +13,8 @@ int main() {
 
     SwapPointers(&pa, &pb);
 
-    std::cout << *pa << " " << *pb << std::endl; // 10 5
+    // The pointers were reseated. a is still 5 and b is still 10.
+    std::cout << *pa << " " << *pb << '\n'; // 10 5
+    std::cout << a << " " << b << '\n';     // 5 10
     return 0;
 }
