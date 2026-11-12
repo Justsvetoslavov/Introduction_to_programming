@@ -10,6 +10,8 @@ int main() {
         b = temp;
     }
 
+    bool isFirst = true;
+
     for (int number = a; number <= b; ++number) {
         bool isPrime = number >= 2;
 
@@ -21,7 +23,11 @@ int main() {
         }
 
         if (isPrime) {
-            std::cout << number << ' ';
+            if (!isFirst) {
+                std::cout << ' ';
+            }
+            isFirst = false;
+            std::cout << number;
         }
     }
 

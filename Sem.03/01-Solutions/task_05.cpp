@@ -17,7 +17,7 @@ int main() {
         b = r;
     }
 
-    std::cout << a;
+    std::cout << a << '\n';
 
     return 0;
 }

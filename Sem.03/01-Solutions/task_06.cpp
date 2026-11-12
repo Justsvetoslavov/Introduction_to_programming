@@ -6,24 +6,24 @@ int main() {
     std::cin >> a;
 
     if (a == 2) {
-        std::cout << "Prime";
+        std::cout << "Prime\n";
         return 0;
     }
 
     if (a < 2 || a % 2 == 0) {
-        std::cout << "Not Prime";
+        std::cout << "Not Prime\n";
         return 0;
     }
 
     const double squareRoot = std::sqrt(a);
     for (int i = 3; i <= squareRoot; i += 2) {
         if (a % i == 0) {
-            std::cout << "Not Prime";
+            std::cout << "Not Prime\n";
             return 0;
         }
     }
 
-    std::cout << "Prime";
+    std::cout << "Prime\n";
 
     return 0;
 }

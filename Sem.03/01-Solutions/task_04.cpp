@@ -13,7 +13,7 @@ int main() {
             gcd = i;
     }
 
-    std::cout << gcd;
+    std::cout << gcd << '\n';
 
     return 0;
 }

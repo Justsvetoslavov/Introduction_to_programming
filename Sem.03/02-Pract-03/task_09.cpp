@@ -4,12 +4,18 @@ int main() {
     int n = 0;
     std::cin >> n;
 
-    int current = 1, next = 1;
+    long long current = 1;
+    long long next = 1;
+    bool isFirst = true;
 
     while (current <= n) {
-        std::cout << current << ' ';
+        if (!isFirst) {
+            std::cout << ' ';
+        }
+        isFirst = false;
+        std::cout << current;
 
-        const int sum = current + next;
+        const long long sum = current + next;
         current = next;
         next = sum;
     }
