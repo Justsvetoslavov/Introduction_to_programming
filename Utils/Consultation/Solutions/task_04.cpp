@@ -1,47 +1,46 @@
-// Ограничения на входа:
-//   n >= 1 и n <= 100000
-
 #include <iostream>
 
-int CountDigits(int n) {
-    int count = 0;
+// The row is processed while it is read: only the previous number and the first difference are kept.
+bool ReadAndCheckArithmeticRow(int n) {
+    int previous = 0;
+    std::cin >> previous;
 
-    while (n != 0) {
-        ++count;
-        n /= 10;
+    // The difference of two int values may not fit in int, so it is stored in long long.
+    long long difference = 0;
+    bool isArithmetic = true;
+
+    for (int i = 1; i < n; ++i) {
+        int current = 0;
+        std::cin >> current;
+
+        long long currentDifference = static_cast<long long>(current) - previous;
+
+        if (i == 1) {
+            difference = currentDifference;
+        } else if (currentDifference != difference) {
+            // No early return: the rest of the row must still be read,
+            // otherwise the next row would start at the wrong place in the input.
+            isArithmetic = false;
+        }
+
+        previous = current;
     }
 
-    return count;
-}
-
-int Power(int base, int exponent) {
-    int result = 1;
-
-    for (int i = 0; i < exponent; ++i) {
-        result *= base;
-    }
-
-    return result;
-}
-
-bool IsArmstrong(int n) {
-    int digitsCount = CountDigits(n);
-    int sum = 0;
-    int remaining = n;
-
-    while (remaining != 0) {
-        sum += Power(remaining % 10, digitsCount);
-        remaining /= 10;
-    }
-
-    return sum == n;
+    return isArithmetic;
 }
 
 int main() {
     int n = 0;
     std::cin >> n;
 
-    std::cout << (IsArmstrong(n) ? "Armstrong number" : "Not Armstrong number") << '\n';
+    int count = 0;
+    for (int i = 0; i < n; ++i) {
+        if (ReadAndCheckArithmeticRow(n)) {
+            ++count;
+        }
+    }
+
+    std::cout << count << '\n';
 
     return 0;
 }

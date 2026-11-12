@@ -1,9 +1,3 @@
-// Ограничения на входа:
-//   n >= 1 и n <= 10^18
-//
-// Цифрите се обхождат отдясно наляво. Обновяваме резултата само при строго по-дълга поредица,
-// затова при равенство остава най-дясната.
-
 #include <iostream>
 
 void PrintLongestRun(unsigned long long n) {
@@ -11,10 +5,11 @@ void PrintLongestRun(unsigned long long n) {
     int bestDigit = 0;
 
     while (n != 0) {
-        int digit = n % 10;
+        // Narrowing unsigned long long to int is explicit; the remainder is 0..9, so it always fits.
+        int digit = static_cast<int>(n % 10);
         int length = 0;
 
-        while (n != 0 && static_cast<int>(n % 10) == digit) {
+        while (n != 0 && n % 10 == digit) {
             ++length;
             n /= 10;
         }
