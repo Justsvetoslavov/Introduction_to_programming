@@ -14,8 +14,7 @@
 ## Синтаксис
 
 ```c++
-<тип_резултат> <идентификатор>(<параметър1>, <параметър2>, ...)
-{
+<тип_резултат> <идентификатор>(<параметър1>, <параметър2>, ...) {
     <тяло на функцията>
 }
 ```
@@ -31,7 +30,7 @@
 
 ### Семантични бележки
 - `void` - специален тип, означаващ "няма връщана стойност"
-- Функция с тип различен от `void` **трябва** да върне стойност чрез `return`, иначе - грешка при компилация
+- Функция с тип различен от `void` **трябва** да върне стойност чрез `return`, иначе - недефинирано поведение (компилаторът обикновено издава само предупреждение; изключение е `main`, където `return 0` се подразбира)
 - При подаване на **примитивен тип** или обект като параметър, се създава **копие** в scope-а на функцията (pass by value)
 - Извикването на функция е операция с **много висок приоритет**
 - Функциите трябва да бъдат **декларирани или дефинирани преди** да бъдат използвани
@@ -42,31 +41,27 @@
 #include <iostream>
 
 // Функция без параметри и без връщана стойност
-void helloWorld()
-{
+void HelloWorld() {
     std::cout << "Hello World!" << std::endl;
 }
 
 // Функция с параметри и връщана стойност
-int add(int a, int b)
-{
+int Add(int a, int b) {
     return a + b;
 }
 
 // Функция с параметри без връщана стойност
-void printNumber(int num)
-{
+void PrintNumber(int num) {
     std::cout << "Number: " << num << std::endl;
 }
 
-int main()
-{
-    helloWorld();              // Извикване на функция без параметри
+int main() {
+    HelloWorld();              // Извикване на функция без параметри
     
-    int sum = add(5, 3);       // Извикване с параметри и запазване на резултата
+    int sum = Add(5, 3);       // Извикване с параметри и запазване на резултата
     std::cout << "Sum: " << sum << std::endl; // Изход: Sum: 8
     
-    printNumber(42);           // Извикване с параметър
+    PrintNumber(42);           // Извикване с параметър
     
     return 0;
 }
@@ -81,8 +76,7 @@ int main()
 
 **При void функции:**
 ```c++
-void printPositive(int num)
-{
+void PrintPositive(int num) {
     if (num <= 0) {
         return; // Ранно приключване, не се изпълнява кода след това
     }
@@ -92,13 +86,11 @@ void printPositive(int num)
 
 **При функции с връщана стойност:**
 ```c++
-int max(int n, int k)
-{
+int Max(int n, int k) {
     return n > k ? n : k; // Връща по-голямото от двете числа
 }
 
-int absolute(int num)
-{
+int Absolute(int num) {
     if (num < 0) {
         return -num; // Множество return изрази
     }
@@ -106,8 +98,7 @@ int absolute(int num)
 }
 
 // ЛОШО - код след return никога не се изпълнява!
-int bad()
-{
+int Bad() {
     return 5;
     std::cout << "Never printed"; // Unreachable code - предупреждение
 }
@@ -125,18 +116,16 @@ int bad()
 ```c++
 #include <iostream>
 
-void increment(int n)
-{
+void Increment(int n) {
     n++;                        // Променя се САМО локалното копие
     std::cout << "Inside function: " << n << std::endl; // 5
 }
 
-int main()
-{
+int main() {
     int n = 4;
     std::cout << "Before: " << n << std::endl; // 4
     
-    increment(n);               // Подава се копие на n
+    Increment(n);               // Подава се копие на n
     
     std::cout << "After: " << n << std::endl;  // 4 - оригиналът е непроменен!
     
@@ -159,18 +148,16 @@ int main()
 ```c++
 #include <iostream>
 
-void increment(int &n)          // & означава референция
-{
+void Increment(int& n) { // & означава референция
     n++;                        // Променя ДИРЕКТНО оригиналната променлива
     std::cout << "Inside function: " << n << std::endl; // 5
 }
 
-int main()
-{
+int main() {
     int n = 4;
     std::cout << "Before: " << n << std::endl; // 4
     
-    increment(n);               // Подава се референция (не копие!)
+    Increment(n);               // Подава се референция (не копие!)
     
     std::cout << "After: " << n << std::endl;  // 5 - оригиналът Е ПРОМЕНЕН!
     
@@ -178,27 +165,28 @@ int main()
 }
 ```
 
-**Класически пример - swap функция:**
+**Класически пример - функция Swap:**
 ```c++
-void swap(double &a, double &b)
-{
+#include <iostream>
+
+void Swap(double& a, double& b) {
     double temp = a;
     a = b;
     b = temp;
 }
 
-int main()
-{
+int main() {
     double x = 3.5, y = 7.2;
     std::cout << "Before: x=" << x << ", y=" << y << std::endl; // x=3.5, y=7.2
-    
-    swap(x, y);
-    
+
+    Swap(x, y);
+
     std::cout << "After: x=" << x << ", y=" << y << std::endl;  // x=7.2, y=3.5
-    
+
     return 0;
 }
 ```
+Ако параметрите бяха по копие (`double a, double b`), функцията щеше да размени само локалните копия и `x` и `y` щяха да останат непроменени. Повече за референциите има в [Тема 5](../Sem.05/README.md).
 
 ### Как работи pass by reference
 - При извикване **НЕ се създава копие**.
@@ -225,73 +213,75 @@ int main()
 - Функциите трябва да се различават по **брой** и/или **тип** на параметрите
 - **Само връщаният тип НЕ е достатъчен** за разграничаване
 - Подредбата на параметрите **има значение**
-- `const` и non-const параметри **могат** да създадат двусмислие за примитивни типове
+- `const` върху параметър по стойност **не** променя сигнатурата - `F(int)` и `F(const int)` са една и съща функция
 
 **Примери:**
 
+Деветте декларации по-долу не могат да стоят заедно в една програма. `//7` повтаря `//2`, а `//9` се различава от `//1` само по връщания тип. Следващият блок показва кои двойки са грешка и кои са валидно претоварване.
+
 ```c++
-void cout(char a) { std::cout << a; } //1
+void Print(char a) { std::cout << a; } //1
 
-void cout(int a) { std::cout << a; } //2
+void Print(int a) { std::cout << a; } //2
 
-void cout(char a, int b) { std::cout << a << '-' << b; } //3
+void Print(char a, int b) { std::cout << a << '-' << b; } //3
 
-void cout(double a, char b) { std::cout << b << '-' << a; } //4
+void Print(double a, char b) { std::cout << b << '-' << a; } //4
 
-void cout(bool a) { std::cout << a; } //5
+void Print(bool a) { std::cout << a; } //5
 
-void cout(char a, bool b, int c) { std::cout << a <<b << c; } //6
+void Print(char a, bool b, int c) { std::cout << a << b << c; } //6
 
-void cout(const int a) { std::cout << a; } //7
+void Print(const int a) { std::cout << a; } //7
 
-void cout(char a, unsigned b) { std::cout << a << '-' <<b; } //8
+void Print(char a, unsigned b) { std::cout << a << '-' << b; } //8
 
-char cout(char a) { return a; } //9
+char Print(char a) { return a; } //9
 ```
 
 ```c++
-void cout(char a) { std::cout << a; } //двусмислие с 9
+void Print(char a) { std::cout << a; } // грешка с 9 - различават се само по връщания тип
 
-void cout(int a) { std::cout << a; } // двусмислие със 7
+void Print(int a) { std::cout << a; } // redefinition със 7
 
-void cout(char a, int b) { std::cout << a << '-' << b; } //двусмислие с 8
+void Print(char a, int b) { std::cout << a << '-' << b; } // валиден overload; двусмислие само при извикване като Print('a', 1.5)
 
 /*-------------------------------------------------------*/
-void cout(double a, char b) { std::cout << b << '-' << a; }
+void Print(double a, char b) { std::cout << b << '-' << a; }
 
-void cout(bool a) { std::cout << a; }
+void Print(bool a) { std::cout << a; }
 
-void cout(char a, bool b, int c) { std::cout << a << b << c; }
+void Print(char a, bool b, int c) { std::cout << a << b << c; }
 /*-------------------------------------------------------*/
 
-void cout(const int a) { std::cout << a; } // двусмислие с 2
+void Print(const int a) { std::cout << a; } // redefinition с 2 - const върху параметър по стойност не е част от сигнатурата
 
-void cout(char a, unsigned b) { std::cout << a << '-' << b; } // двусмислие с 3
+void Print(char a, unsigned b) { std::cout << a << '-' << b; } // валиден overload; вж. бележката при 3
 
-char cout(char a) { return a; } // двусмислие с 1
+char Print(char a) { return a; } // грешка с 1 - различават се само по връщания тип
 ```
+
+`Print('a', 1.5)`, `Print('a', 1.5f)` и `Print('a', 1L)` са двусмислени между `Print(char, int)` и `Print(char, unsigned)`. Ако в програмата има и `Print(char)`, `Print(int)` и `Print(bool)`, извикването `Print(0.0)` също е двусмислено.
 
 **Важно:**
-- Подредбата на параметрите **има значение** - `func(int, double)` и `func(double, int)` са **различни** функции
+- Подредбата на параметрите **има значение** - `Func(int, double)` и `Func(double, int)` са **различни** функции
 - Overloading прави кода **по-четим** и **по-лесен за използване**
 - **Избягвайте** прекалено много overloads - усложнява кода
 
 ## Параметри по подразбиране
-Възможно е да имате програма, в която 90% от случаите подавате eдин и същ параметър на дадено място. <br />
+Възможно е да имате програма, в която 90% от случаите подавате един и същ параметър на дадено място. <br />
 C++ позволява да имате стойност по подразбиране за 1 или повече параметри, които не се налага да уточнявате при извикване на функцията. <br />
 
 ```c++
 #include <iostream>
 
-void print(int a, int b = 5)
-{
+void Print(int a, int b = 5) {
     std::cout << a << " " << b;
 }
 
-int main()
-{
-    print(4); // 4 5
-    print(3, 6); // 3 6
+int main() {
+    Print(4); // 4 5
+    Print(3, 6); // 3 6
     
     return 0;
 }
@@ -301,14 +291,14 @@ int main()
 ```c++
 #include <iostream>
 
-void print(int a, int b = 5, char c = 't') {
+void Print(int a, int b = 5, char c = 't') {
     std::cout << a << " " << b << " " << c;
 }
 
 int main() {
-    print(4); // 4 5 t
-    print(3,6); // 3 6 t
-    print(3, '0'); // 3 48 t
+    Print(4); // 4 5 t
+    Print(3,6); // 3 6 t
+    Print(3, '0'); // 3 48 t
     
     return 0;
 }
@@ -319,24 +309,24 @@ int main() {
 > **Важно:** Параметрите по подразбиране винаги са в последователността, в която са дефинирани, не могат да се прескачат
 
 ## Function Declaration vs Definition
-Declaration – казва на компилатора, че така функция съществува. <br />
+Declaration – казва на компилатора, че такава функция съществува. <br />
 Definition – казва на компилатора, какво всъщност прави тази функция(нейната функционалност). <br />
-Една функция **може да бъде декларирана**, но да **не бъде дефинирана**. Получаваме компилационна грешка, ако тази функция бъде извикана. <br />
+Една функция **може да бъде декларирана**, но да **не бъде дефинирана**. Получаваме грешка при свързване (linker error), ако тази функция бъде извикана. <br />
 
 ```c++
 #include <iostream>
 
 //Declaration
-void helloWorld(); 
+void HelloWorld(); 
 
-int main()  {
-    helloWorld();
+int main() {
+    HelloWorld();
     
     return 0;
 }
 
 //Definition
-void helloWorld() {
+void HelloWorld() {
     std::cout << "Hello World!\n";
 }
 ```
@@ -372,20 +362,45 @@ void helloWorld() {
 
 Да разгледаме следния пример:
 ```c++
-void bar() { }
+void Bar() { }
 
-void foo() {
-  bar();
+void Foo() {
+    Bar();
 }
 
 int main() {
-  foo();
+    Foo();
 }
 ```
 Кои стекови рамки се намират в стека, във всеки един момент на изпълнение на програмата, са показани на долната картинка:   
 ![Стекова рамка](00-images/Stack-Functions-Representation.jpg)
 
 ## Допълнителни ресурси
+
+### Ред на изчисляване при извикване на функция
+Редът, в който се изчисляват аргументите на функция, не е определен от стандарта. От C++17 изчисляването на отделните аргументи не се преплита, а изразът, който определя извикваната функция, се изчислява преди тях. При някои оператори редът е гарантиран: `<<` и `>>` се изчисляват отляво надясно, а при `=` дясната страна се изчислява преди лявата.
+
+```c++
+#include <iostream>
+
+int Next(int& counter) {
+    return ++counter;
+}
+
+void Print(int a, int b) {
+    std::cout << a << ' ' << b << '\n';
+}
+
+int main() {
+    int counter = 0;
+
+    Print(Next(counter), Next(counter)); // "1 2" или "2 1" - редът не е определен
+    std::cout << Next(counter) << ' ' << Next(counter) << '\n'; // "3 4" - от C++17 редът е гарантиран
+
+    return 0;
+}
+```
+
 - [SO: What are the evaluation order guarantees introduced by C++17?](https://stackoverflow.com/questions/38501587/what-are-the-evaluation-order-guarantees-introduced-by-c17)
 - [Refining Expression Evaluation Order for Idiomatic C++](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0145r3.pdf)
 
